@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		646EA9F821F93F8D001DA03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EA9F721F93F8D001DA03D /* AppDelegate.swift */; };
+		646EA9FA21F93F8D001DA03D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EA9F921F93F8D001DA03D /* ViewController.swift */; };
+		646EA9FD21F93F8D001DA03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 646EA9FB21F93F8D001DA03D /* Main.storyboard */; };
+		646EA9FF21F93F8E001DA03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646EA9FE21F93F8E001DA03D /* Assets.xcassets */; };
+		646EAA0221F93F8E001DA03D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 646EAA0021F93F8E001DA03D /* LaunchScreen.storyboard */; };
+		646EAA0D21F93F8E001DA03D /* woop_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAA0C21F93F8E001DA03D /* woop_iosTests.swift */; };
+		646EAA1821F93F8E001DA03D /* woop_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAA1721F93F8E001DA03D /* woop_iosUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		646EAA0921F93F8E001DA03D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 646EA9EC21F93F8D001DA03D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 646EA9F321F93F8D001DA03D;
+			remoteInfo = "woop-ios";
+		};
+		646EAA1421F93F8E001DA03D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 646EA9EC21F93F8D001DA03D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 646EA9F321F93F8D001DA03D;
+			remoteInfo = "woop-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		646EA9F421F93F8D001DA03D /* woop-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "woop-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		646EA9F721F93F8D001DA03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		646EA9F921F93F8D001DA03D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		646EA9FC21F93F8D001DA03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		646EA9FE21F93F8E001DA03D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		646EAA0121F93F8E001DA03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		646EAA0321F93F8E001DA03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		646EAA0821F93F8E001DA03D /* woop-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "woop-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		646EAA0C21F93F8E001DA03D /* woop_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = woop_iosTests.swift; sourceTree = "<group>"; };
+		646EAA0E21F93F8E001DA03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		646EAA1321F93F8E001DA03D /* woop-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "woop-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		646EAA1721F93F8E001DA03D /* woop_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = woop_iosUITests.swift; sourceTree = "<group>"; };
+		646EAA1921F93F8E001DA03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		646EA9F121F93F8D001DA03D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		646EAA0521F93F8E001DA03D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		646EAA1021F93F8E001DA03D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		646EA9EB21F93F8D001DA03D = {
+			isa = PBXGroup;
+			children = (
+				646EA9F621F93F8D001DA03D /* woop-ios */,
+				646EAA0B21F93F8E001DA03D /* woop-iosTests */,
+				646EAA1621F93F8E001DA03D /* woop-iosUITests */,
+				646EA9F521F93F8D001DA03D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		646EA9F521F93F8D001DA03D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				646EA9F421F93F8D001DA03D /* woop-ios.app */,
+				646EAA0821F93F8E001DA03D /* woop-iosTests.xctest */,
+				646EAA1321F93F8E001DA03D /* woop-iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		646EA9F621F93F8D001DA03D /* woop-ios */ = {
+			isa = PBXGroup;
+			children = (
+				646EA9F721F93F8D001DA03D /* AppDelegate.swift */,
+				646EA9F921F93F8D001DA03D /* ViewController.swift */,
+				646EA9FB21F93F8D001DA03D /* Main.storyboard */,
+				646EA9FE21F93F8E001DA03D /* Assets.xcassets */,
+				646EAA0021F93F8E001DA03D /* LaunchScreen.storyboard */,
+				646EAA0321F93F8E001DA03D /* Info.plist */,
+			);
+			path = "woop-ios";
+			sourceTree = "<group>";
+		};
+		646EAA0B21F93F8E001DA03D /* woop-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				646EAA0C21F93F8E001DA03D /* woop_iosTests.swift */,
+				646EAA0E21F93F8E001DA03D /* Info.plist */,
+			);
+			path = "woop-iosTests";
+			sourceTree = "<group>";
+		};
+		646EAA1621F93F8E001DA03D /* woop-iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				646EAA1721F93F8E001DA03D /* woop_iosUITests.swift */,
+				646EAA1921F93F8E001DA03D /* Info.plist */,
+			);
+			path = "woop-iosUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		646EA9F321F93F8D001DA03D /* woop-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 646EAA1C21F93F8E001DA03D /* Build configuration list for PBXNativeTarget "woop-ios" */;
+			buildPhases = (
+				646EA9F021F93F8D001DA03D /* Sources */,
+				646EA9F121F93F8D001DA03D /* Frameworks */,
+				646EA9F221F93F8D001DA03D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "woop-ios";
+			productName = "woop-ios";
+			productReference = 646EA9F421F93F8D001DA03D /* woop-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		646EAA0721F93F8E001DA03D /* woop-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 646EAA1F21F93F8E001DA03D /* Build configuration list for PBXNativeTarget "woop-iosTests" */;
+			buildPhases = (
+				646EAA0421F93F8E001DA03D /* Sources */,
+				646EAA0521F93F8E001DA03D /* Frameworks */,
+				646EAA0621F93F8E001DA03D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				646EAA0A21F93F8E001DA03D /* PBXTargetDependency */,
+			);
+			name = "woop-iosTests";
+			productName = "woop-iosTests";
+			productReference = 646EAA0821F93F8E001DA03D /* woop-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		646EAA1221F93F8E001DA03D /* woop-iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 646EAA2221F93F8E001DA03D /* Build configuration list for PBXNativeTarget "woop-iosUITests" */;
+			buildPhases = (
+				646EAA0F21F93F8E001DA03D /* Sources */,
+				646EAA1021F93F8E001DA03D /* Frameworks */,
+				646EAA1121F93F8E001DA03D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				646EAA1521F93F8E001DA03D /* PBXTargetDependency */,
+			);
+			name = "woop-iosUITests";
+			productName = "woop-iosUITests";
+			productReference = 646EAA1321F93F8E001DA03D /* woop-iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		646EA9EC21F93F8D001DA03D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = kuquert;
+				TargetAttributes = {
+					646EA9F321F93F8D001DA03D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					646EAA0721F93F8E001DA03D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 646EA9F321F93F8D001DA03D;
+					};
+					646EAA1221F93F8E001DA03D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 646EA9F321F93F8D001DA03D;
+					};
+				};
+			};
+			buildConfigurationList = 646EA9EF21F93F8D001DA03D /* Build configuration list for PBXProject "woop-ios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 646EA9EB21F93F8D001DA03D;
+			productRefGroup = 646EA9F521F93F8D001DA03D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				646EA9F321F93F8D001DA03D /* woop-ios */,
+				646EAA0721F93F8E001DA03D /* woop-iosTests */,
+				646EAA1221F93F8E001DA03D /* woop-iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		646EA9F221F93F8D001DA03D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				646EAA0221F93F8E001DA03D /* LaunchScreen.storyboard in Resources */,
+				646EA9FF21F93F8E001DA03D /* Assets.xcassets in Resources */,
+				646EA9FD21F93F8D001DA03D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		646EAA0621F93F8E001DA03D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		646EAA1121F93F8E001DA03D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		646EA9F021F93F8D001DA03D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				646EA9FA21F93F8D001DA03D /* ViewController.swift in Sources */,
+				646EA9F821F93F8D001DA03D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		646EAA0421F93F8E001DA03D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				646EAA0D21F93F8E001DA03D /* woop_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		646EAA0F21F93F8E001DA03D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				646EAA1821F93F8E001DA03D /* woop_iosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		646EAA0A21F93F8E001DA03D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 646EA9F321F93F8D001DA03D /* woop-ios */;
+			targetProxy = 646EAA0921F93F8E001DA03D /* PBXContainerItemProxy */;
+		};
+		646EAA1521F93F8E001DA03D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 646EA9F321F93F8D001DA03D /* woop-ios */;
+			targetProxy = 646EAA1421F93F8E001DA03D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		646EA9FB21F93F8D001DA03D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				646EA9FC21F93F8D001DA03D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		646EAA0021F93F8E001DA03D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				646EAA0121F93F8E001DA03D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		646EAA1A21F93F8E001DA03D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		646EAA1B21F93F8E001DA03D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		646EAA1D21F93F8E001DA03D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "woop-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kuquert.woop-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		646EAA1E21F93F8E001DA03D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "woop-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kuquert.woop-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		646EAA2021F93F8E001DA03D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "woop-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kuquert.woop-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/woop-ios.app/woop-ios";
+			};
+			name = Debug;
+		};
+		646EAA2121F93F8E001DA03D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "woop-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kuquert.woop-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/woop-ios.app/woop-ios";
+			};
+			name = Release;
+		};
+		646EAA2321F93F8E001DA03D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "woop-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kuquert.woop-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "woop-ios";
+			};
+			name = Debug;
+		};
+		646EAA2421F93F8E001DA03D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "woop-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kuquert.woop-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "woop-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		646EA9EF21F93F8D001DA03D /* Build configuration list for PBXProject "woop-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				646EAA1A21F93F8E001DA03D /* Debug */,
+				646EAA1B21F93F8E001DA03D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		646EAA1C21F93F8E001DA03D /* Build configuration list for PBXNativeTarget "woop-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				646EAA1D21F93F8E001DA03D /* Debug */,
+				646EAA1E21F93F8E001DA03D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		646EAA1F21F93F8E001DA03D /* Build configuration list for PBXNativeTarget "woop-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				646EAA2021F93F8E001DA03D /* Debug */,
+				646EAA2121F93F8E001DA03D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		646EAA2221F93F8E001DA03D /* Build configuration list for PBXNativeTarget "woop-iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				646EAA2321F93F8E001DA03D /* Debug */,
+				646EAA2421F93F8E001DA03D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 646EA9EC21F93F8D001DA03D /* Project object */;
+}
