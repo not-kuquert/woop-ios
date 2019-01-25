@@ -14,9 +14,12 @@
 		646EAA0221F93F8E001DA03D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 646EAA0021F93F8E001DA03D /* LaunchScreen.storyboard */; };
 		646EAA0D21F93F8E001DA03D /* woop_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAA0C21F93F8E001DA03D /* woop_iosTests.swift */; };
 		646EAA1821F93F8E001DA03D /* woop_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAA1721F93F8E001DA03D /* woop_iosUITests.swift */; };
+		646EAA2921F94092001DA03D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAA2821F94092001DA03D /* Resource.swift */; };
+		646EAA3021F94141001DA03D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAA2F21F94141001DA03D /* Service.swift */; };
 		646EAA3521F94335001DA03D /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAA3421F94335001DA03D /* Person.swift */; };
 		646EAA3721F9433F001DA03D /* Cupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAA3621F9433F001DA03D /* Cupon.swift */; };
 		646EAA3921F94348001DA03D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAA3821F94348001DA03D /* Event.swift */; };
+		64A6B46B21FAC3A50075C260 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6B46A21FAC3A50075C260 /* HttpMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +53,12 @@
 		646EAA1321F93F8E001DA03D /* woop-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "woop-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		646EAA1721F93F8E001DA03D /* woop_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = woop_iosUITests.swift; sourceTree = "<group>"; };
 		646EAA1921F93F8E001DA03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		646EAA2821F94092001DA03D /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		646EAA2F21F94141001DA03D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		646EAA3421F94335001DA03D /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		646EAA3621F9433F001DA03D /* Cupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupon.swift; sourceTree = "<group>"; };
 		646EAA3821F94348001DA03D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		64A6B46A21FAC3A50075C260 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				646EAA3321F941B7001DA03D /* Model */,
+				646EAA2521F94066001DA03D /* Network */,
 				646EA9F721F93F8D001DA03D /* AppDelegate.swift */,
 				646EA9F921F93F8D001DA03D /* ViewController.swift */,
 				646EA9FB21F93F8D001DA03D /* Main.storyboard */,
@@ -132,6 +139,14 @@
 			path = "woop-iosUITests";
 			sourceTree = "<group>";
 		};
+		646EAA2521F94066001DA03D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				64A6B46E21FAC5700075C260 /* Base */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		646EAA3321F941B7001DA03D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +155,16 @@
 				646EAA3421F94335001DA03D /* Person.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		64A6B46E21FAC5700075C260 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				646EAA2F21F94141001DA03D /* Service.swift */,
+				646EAA2821F94092001DA03D /* Resource.swift */,
+				64A6B46A21FAC3A50075C260 /* HttpMethod.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +300,10 @@
 			files = (
 				646EA9FA21F93F8D001DA03D /* ViewController.swift in Sources */,
 				646EAA3921F94348001DA03D /* Event.swift in Sources */,
+				64A6B46B21FAC3A50075C260 /* HttpMethod.swift in Sources */,
+				646EAA2921F94092001DA03D /* Resource.swift in Sources */,
 				646EAA3721F9433F001DA03D /* Cupon.swift in Sources */,
+				646EAA3021F94141001DA03D /* Service.swift in Sources */,
 				646EAA3521F94335001DA03D /* Person.swift in Sources */,
 				646EA9F821F93F8D001DA03D /* AppDelegate.swift in Sources */,
 			);
