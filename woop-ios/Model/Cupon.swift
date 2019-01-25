@@ -9,7 +9,7 @@
 import Foundation
 
 struct Cupon: Codable {
-    var discount: String
+    var discount: Int
     var eventId: String
     var id: String
 }
