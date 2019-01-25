@@ -27,6 +27,9 @@
 		646EAA3D21F95740001DA03D /* Checkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAA3C21F95740001DA03D /* Checkin.swift */; };
 		64A6B46B21FAC3A50075C260 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6B46A21FAC3A50075C260 /* HttpMethod.swift */; };
 		64A6B46D21FAC3E40075C260 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6B46C21FAC3E40075C260 /* ApiRouter.swift */; };
+		64A6B48B21FAF1B20075C260 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A6B47221FAEF250075C260 /* Kingfisher.framework */; };
+		64A6B48C21FAF1B20075C260 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A6B47321FAEF250075C260 /* Rswift.framework */; };
+		64A6B48E21FAF5010075C260 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6B48D21FAF5010075C260 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		646EAA3C21F95740001DA03D /* Checkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkin.swift; sourceTree = "<group>"; };
 		64A6B46A21FAC3A50075C260 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		64A6B46C21FAC3E40075C260 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		64A6B47221FAEF250075C260 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		64A6B47321FAEF250075C260 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
+		64A6B48D21FAF5010075C260 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A6B48B21FAF1B20075C260 /* Kingfisher.framework in Frameworks */,
+				64A6B48C21FAF1B20075C260 /* Rswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +115,7 @@
 				646EAA0B21F93F8E001DA03D /* woop-iosTests */,
 				646EAA1621F93F8E001DA03D /* woop-iosUITests */,
 				646EA9F521F93F8D001DA03D /* Products */,
+				64A6B47121FAEF250075C260 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +140,7 @@
 				646EA9FE21F93F8E001DA03D /* Assets.xcassets */,
 				646EAA0021F93F8E001DA03D /* LaunchScreen.storyboard */,
 				646EAA0321F93F8E001DA03D /* Info.plist */,
+				64A6B48D21FAF5010075C260 /* R.generated.swift */,
 			);
 			path = "woop-ios";
 			sourceTree = "<group>";
@@ -196,6 +206,15 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		64A6B47121FAEF250075C260 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64A6B47221FAEF250075C260 /* Kingfisher.framework */,
+				64A6B47321FAEF250075C260 /* Rswift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 646EAA1C21F93F8E001DA03D /* Build configuration list for PBXNativeTarget "woop-ios" */;
 			buildPhases = (
+				64A6B47021FAEE550075C260 /* R.swift */,
 				646EA9F021F93F8D001DA03D /* Sources */,
 				646EA9F121F93F8D001DA03D /* Frameworks */,
 				646EA9F221F93F8D001DA03D /* Resources */,
+				64A6B46F21FAEE010075C260 /* Carthage copy frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,12 +345,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		64A6B46F21FAEE010075C260 /* Carthage copy frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			name = "Carthage copy frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Rswift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		64A6B47021FAEE550075C260 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(TEMP_DIR)/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/Rswift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		646EA9F021F93F8D001DA03D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				646EA9FA21F93F8D001DA03D /* ViewController.swift in Sources */,
+				64A6B48E21FAF5010075C260 /* R.generated.swift in Sources */,
 				646EAA3921F94348001DA03D /* Event.swift in Sources */,
 				646EAA3221F94170001DA03D /* Mockservice.swift in Sources */,
 				646EAA3D21F95740001DA03D /* Checkin.swift in Sources */,
@@ -517,6 +584,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "woop-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -534,6 +605,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "woop-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
