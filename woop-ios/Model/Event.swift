@@ -13,9 +13,9 @@ struct Event: Codable {
     var date: Date // "date": 1534784400000
     var description: String
     var id: String
-    var image: String //can be a Url too
-    var latitude: String
-    var longitude: String
+    var image: String
+//    var latitude: Double //TODO: Create custom decoder that accept String or Double
+//    var longitude: Double //TODO: Create custom decoder that accept String or Double
     var people: [Person]
     var price: Double
     var title: String
