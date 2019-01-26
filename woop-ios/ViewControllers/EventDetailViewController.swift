@@ -18,6 +18,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var eventView: EventView!
+    @IBOutlet weak var checkinButton: UIButton!
     
     class func newInstance(event: Event) -> EventDetailViewController {
         let controller = R.storyboard.main.eventDetailViewController()!
@@ -30,6 +31,8 @@ class EventDetailViewController: UIViewController {
         descriptionLabel.text = event.description
         eventView.event = event
         populatAddessLabel(event: event)
+        
+        checkinButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
     }
     
     private func populatAddessLabel(event: Event) {
@@ -44,6 +47,36 @@ class EventDetailViewController: UIViewController {
                 self?.addressLabel.text = "\(address), \(neighborhood) - \(city)"
             }
         }
+    }
+    
+    @objc private func showAlert() {
+        //TODO: Extarct string to strings file
+        let alert = UIAlertController(title: "Precisamos de algumas informanções",
+                                      message: "Para manter você informado sobre o evento e saber quem você é, precisamos de algumas informações",
+                                      preferredStyle: .alert)
         
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .default, handler: nil))
+        
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Nome"
+        })
+        
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "E-mail"
+            textField.keyboardType = .emailAddress
+        })
+        
+        alert.addAction(UIAlertAction(title: "Check-in", style: .default, handler: { action in
+            if let name = alert.textFields?.get(at: 0)?.text,
+                let email = alert.textFields?.get(at: 1)?.text {
+                //TODO: validate info, if not valid show invalid info alert with prefilled information
+                //self.present(alert, animated: true)
+                print("Your name: \(name)")
+                print("Your email: \(email)")
+            }
+            
+        }))
+        
+        self.present(alert, animated: true)
     }
 }
