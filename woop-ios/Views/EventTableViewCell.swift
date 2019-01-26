@@ -10,6 +10,8 @@ import UIKit
 
 class EventTableViewCell: UITableViewCell {
     
+    static let highlightFactor: CGFloat = 0.96
+    
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var contentContainerView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -22,11 +24,6 @@ class EventTableViewCell: UITableViewCell {
         contentContainerView.layer.cornerRadius = 8
     }
     
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        backgroundImageView.alpha = highlighted ? 0.4 : 1
-        titleLabel.textColor = highlighted ? .black : .white
-    }
-    
     //TODO: Add contrasted text color depending on image avrage color
     func render(event: Event) {
         titleLabel.text = event.title
@@ -37,5 +34,43 @@ class EventTableViewCell: UITableViewCell {
         backgroundImageView?.kf.setImage(with: URL(string: a),
                                          placeholder: UIImage(named: "placeholder"))
         shadowView.cellShadow()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        animate(isHighlighted: true)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        animate(isHighlighted: false)
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        animate(isHighlighted: false)
+    }
+    
+    private func animate(isHighlighted: Bool, completion: ((Bool) -> Void)? = nil) {
+        let animationBlock: () -> Void
+        
+        if isHighlighted {
+            animationBlock = { [weak self] in
+                self?.transform = .init(scaleX: EventTableViewCell.highlightFactor,
+                                        y: EventTableViewCell.highlightFactor)
+                }
+        } else {
+            animationBlock = { [weak self] in
+                self?.transform = .identity
+            }
+        }
+        
+        UIView.animate(withDuration: 0.5,
+        delay: 0,
+        usingSpringWithDamping: 1,
+        initialSpringVelocity: 0,
+        options: [],
+        animations: animationBlock,
+        completion: completion)
     }
 }
