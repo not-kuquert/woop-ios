@@ -14,7 +14,7 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var contentContainerView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dateView: DateView!
     @IBOutlet weak var priceLabel: UILabel!
     
     override func awakeFromNib() {
@@ -29,11 +29,8 @@ class EventTableViewCell: UITableViewCell {
     
     //TODO: Add contrasted text color depending on image avrage color
     func render(event: Event) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yy"
-        
         titleLabel.text = event.title
-        dateLabel.text = formatter.string(from: event.date)
+        dateView.date = event.date
         priceLabel.text = String(event.price)
         let a = event.image.replacingOccurrences(of: "http://", with: "https://")
         

@@ -25,6 +25,10 @@
 		646EAA3921F94348001DA03D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAA3821F94348001DA03D /* Event.swift */; };
 		646EAA3B21F94621001DA03D /* EventsFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAA3A21F94621001DA03D /* EventsFacade.swift */; };
 		646EAA3D21F95740001DA03D /* Checkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EAA3C21F95740001DA03D /* Checkin.swift */; };
+		64766C0E21FCF201007AF7E4 /* DateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64766C0D21FCF201007AF7E4 /* DateView.xib */; };
+		64766C1221FCF3AA007AF7E4 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C1121FCF3AA007AF7E4 /* DateView.swift */; };
+		64766C1421FCF403007AF7E4 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C1321FCF403007AF7E4 /* NibLoadable.swift */; };
+		64766C1721FD0329007AF7E4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C1621FD0329007AF7E4 /* Extensions.swift */; };
 		64A6B46B21FAC3A50075C260 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6B46A21FAC3A50075C260 /* HttpMethod.swift */; };
 		64A6B46D21FAC3E40075C260 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6B46C21FAC3E40075C260 /* ApiRouter.swift */; };
 		64A6B48B21FAF1B20075C260 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A6B47221FAEF250075C260 /* Kingfisher.framework */; };
@@ -76,6 +80,10 @@
 		646EAA3821F94348001DA03D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		646EAA3A21F94621001DA03D /* EventsFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsFacade.swift; sourceTree = "<group>"; };
 		646EAA3C21F95740001DA03D /* Checkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkin.swift; sourceTree = "<group>"; };
+		64766C0D21FCF201007AF7E4 /* DateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateView.xib; sourceTree = "<group>"; };
+		64766C1121FCF3AA007AF7E4 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		64766C1321FCF403007AF7E4 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		64766C1621FD0329007AF7E4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		64A6B46A21FAC3A50075C260 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		64A6B46C21FAC3E40075C260 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		64A6B47221FAEF250075C260 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -140,6 +148,7 @@
 				646EAA2521F94066001DA03D /* Network */,
 				64A6B49021FAFACE0075C260 /* Views */,
 				64A6B48F21FAFA720075C260 /* ViewControllers */,
+				64766C1521FD030A007AF7E4 /* Utils */,
 				646EA9F721F93F8D001DA03D /* AppDelegate.swift */,
 				646EA9FB21F93F8D001DA03D /* Main.storyboard */,
 				646EA9FE21F93F8E001DA03D /* Assets.xcassets */,
@@ -201,6 +210,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		64766C1521FD030A007AF7E4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				64766C1321FCF403007AF7E4 /* NibLoadable.swift */,
+				64766C1621FD0329007AF7E4 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		64A6B46E21FAC5700075C260 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				64A6B49121FAFAF70075C260 /* EventTableViewCell.swift */,
+				64766C1121FCF3AA007AF7E4 /* DateView.swift */,
+				64766C0D21FCF201007AF7E4 /* DateView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -347,6 +367,7 @@
 				646EAA0221F93F8E001DA03D /* LaunchScreen.storyboard in Resources */,
 				646EA9FF21F93F8E001DA03D /* Assets.xcassets in Resources */,
 				646EA9FD21F93F8D001DA03D /* Main.storyboard in Resources */,
+				64766C0E21FCF201007AF7E4 /* DateView.xib in Resources */,
 				646EAA2E21F94101001DA03D /* event1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,7 +443,10 @@
 				646EAA3921F94348001DA03D /* Event.swift in Sources */,
 				64A6B49221FAFAF70075C260 /* EventTableViewCell.swift in Sources */,
 				646EAA3221F94170001DA03D /* Mockservice.swift in Sources */,
+				64766C1221FCF3AA007AF7E4 /* DateView.swift in Sources */,
 				646EAA3D21F95740001DA03D /* Checkin.swift in Sources */,
+				64766C1721FD0329007AF7E4 /* Extensions.swift in Sources */,
+				64766C1421FCF403007AF7E4 /* NibLoadable.swift in Sources */,
 				64A6B46B21FAC3A50075C260 /* HttpMethod.swift in Sources */,
 				646EAA2921F94092001DA03D /* Resource.swift in Sources */,
 				646EAA3721F9433F001DA03D /* Cupon.swift in Sources */,
