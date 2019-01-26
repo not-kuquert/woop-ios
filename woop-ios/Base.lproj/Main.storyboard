@@ -87,7 +87,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8s-LR-f6K" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="806.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="847.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HY0-XX-oO7" customClass="EventView" customModule="woop_ios" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="16" width="359" height="320"/>
@@ -97,29 +97,38 @@
                                                 </constraints>
                                             </view>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Oq-YX-njI">
-                                                <rect key="frame" x="8" y="567" width="359" height="239.5"/>
+                                                <rect key="frame" x="8" y="608" width="359" height="239.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="8Oq-YX-njI" secondAttribute="height" multiplier="3:2" id="9Ma-xU-70V"/>
                                                 </constraints>
                                             </mapView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rX7-Jh-s9o">
-                                                <rect key="frame" x="16" y="368" width="343" height="183"/>
+                                                <rect key="frame" x="16" y="409" width="343" height="183"/>
                                                 <string key="text">DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avenida Ipiranga, 6681, Partenon - Porto Alegre" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eyf-xb-thh">
+                                                <rect key="frame" x="16" y="352" width="343" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="rX7-Jh-s9o" firstAttribute="top" secondItem="HY0-XX-oO7" secondAttribute="bottom" constant="32" id="0Iz-WP-gNh"/>
+                                            <constraint firstItem="eyf-xb-thh" firstAttribute="leading" secondItem="H8s-LR-f6K" secondAttribute="leading" constant="16" id="83g-9b-uZY"/>
                                             <constraint firstItem="8Oq-YX-njI" firstAttribute="top" secondItem="rX7-Jh-s9o" secondAttribute="bottom" constant="16" id="8qc-so-y0l"/>
                                             <constraint firstAttribute="bottom" secondItem="8Oq-YX-njI" secondAttribute="bottom" id="CTE-KL-Foe"/>
+                                            <constraint firstAttribute="trailing" secondItem="eyf-xb-thh" secondAttribute="trailing" constant="16" id="FAU-dP-Kj0"/>
+                                            <constraint firstItem="rX7-Jh-s9o" firstAttribute="top" secondItem="eyf-xb-thh" secondAttribute="bottom" constant="16" id="FOM-hV-Idk"/>
                                             <constraint firstItem="rX7-Jh-s9o" firstAttribute="leading" secondItem="H8s-LR-f6K" secondAttribute="leading" constant="16" id="G9W-WZ-goL"/>
                                             <constraint firstItem="8Oq-YX-njI" firstAttribute="leading" secondItem="H8s-LR-f6K" secondAttribute="leading" constant="8" id="Ism-9I-asX"/>
                                             <constraint firstAttribute="trailing" secondItem="rX7-Jh-s9o" secondAttribute="trailing" constant="16" id="Qow-2e-I9z"/>
                                             <constraint firstAttribute="trailing" secondItem="8Oq-YX-njI" secondAttribute="trailing" constant="8" id="WfQ-mR-Soc"/>
                                             <constraint firstAttribute="trailing" secondItem="HY0-XX-oO7" secondAttribute="trailing" constant="8" id="a1g-7l-1aO"/>
+                                            <constraint firstItem="eyf-xb-thh" firstAttribute="top" secondItem="HY0-XX-oO7" secondAttribute="bottom" constant="16" id="h0L-KM-cEw"/>
                                             <constraint firstItem="HY0-XX-oO7" firstAttribute="leading" secondItem="H8s-LR-f6K" secondAttribute="leading" constant="8" id="iAo-bL-3vb"/>
                                             <constraint firstItem="HY0-XX-oO7" firstAttribute="top" secondItem="H8s-LR-f6K" secondAttribute="top" constant="16" id="qPn-Zd-JaN"/>
                                         </constraints>
@@ -147,6 +156,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
+                        <outlet property="addressLabel" destination="eyf-xb-thh" id="GBe-TQ-8M9"/>
                         <outlet property="descriptionLabel" destination="rX7-Jh-s9o" id="nnJ-4S-qtd"/>
                         <outlet property="eventView" destination="HY0-XX-oO7" id="UOE-49-g8I"/>
                         <outlet property="mapView" destination="8Oq-YX-njI" id="6ai-is-RX8"/>
