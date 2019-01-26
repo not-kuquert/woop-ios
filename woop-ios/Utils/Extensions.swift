@@ -57,3 +57,9 @@ extension DateFormatter {
     }
 }
 
+
+extension Collection {
+    func get(at index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
