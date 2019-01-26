@@ -29,6 +29,8 @@
 		64766C1221FCF3AA007AF7E4 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C1121FCF3AA007AF7E4 /* DateView.swift */; };
 		64766C1421FCF403007AF7E4 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C1321FCF403007AF7E4 /* NibLoadable.swift */; };
 		64766C1721FD0329007AF7E4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C1621FD0329007AF7E4 /* Extensions.swift */; };
+		64766C1921FD06DB007AF7E4 /* EventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64766C1821FD06DB007AF7E4 /* EventView.xib */; };
+		64766C1B21FD06E6007AF7E4 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C1A21FD06E6007AF7E4 /* EventView.swift */; };
 		64A6B46B21FAC3A50075C260 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6B46A21FAC3A50075C260 /* HttpMethod.swift */; };
 		64A6B46D21FAC3E40075C260 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6B46C21FAC3E40075C260 /* ApiRouter.swift */; };
 		64A6B48B21FAF1B20075C260 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A6B47221FAEF250075C260 /* Kingfisher.framework */; };
@@ -84,6 +86,8 @@
 		64766C1121FCF3AA007AF7E4 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		64766C1321FCF403007AF7E4 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		64766C1621FD0329007AF7E4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		64766C1821FD06DB007AF7E4 /* EventView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventView.xib; sourceTree = "<group>"; };
+		64766C1A21FD06E6007AF7E4 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		64A6B46A21FAC3A50075C260 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		64A6B46C21FAC3E40075C260 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		64A6B47221FAEF250075C260 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -250,9 +254,11 @@
 		64A6B49021FAFACE0075C260 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				64A6B49121FAFAF70075C260 /* EventTableViewCell.swift */,
 				64766C1121FCF3AA007AF7E4 /* DateView.swift */,
 				64766C0D21FCF201007AF7E4 /* DateView.xib */,
+				64766C1A21FD06E6007AF7E4 /* EventView.swift */,
+				64766C1821FD06DB007AF7E4 /* EventView.xib */,
+				64A6B49121FAFAF70075C260 /* EventTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64766C1921FD06DB007AF7E4 /* EventView.xib in Resources */,
 				646EAA2C21F940D5001DA03D /* events.json in Resources */,
 				646EAA0221F93F8E001DA03D /* LaunchScreen.storyboard in Resources */,
 				646EA9FF21F93F8E001DA03D /* Assets.xcassets in Resources */,
@@ -457,6 +464,7 @@
 				646EAA3B21F94621001DA03D /* EventsFacade.swift in Sources */,
 				64A6B49621FAFE940075C260 /* EventDetailViewController.swift in Sources */,
 				646EAA2721F9407F001DA03D /* Webservice.swift in Sources */,
+				64766C1B21FD06E6007AF7E4 /* EventView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +640,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BJXVASWXX8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -653,6 +662,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BJXVASWXX8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

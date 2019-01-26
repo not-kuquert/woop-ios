@@ -15,6 +15,7 @@ class EventDetailViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var eventView: EventView!
     
     class func newInstance(event: Event) -> EventDetailViewController {
         let controller = R.storyboard.main.eventDetailViewController()!
@@ -25,5 +26,6 @@ class EventDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         descriptionLabel.text = event.description
+        eventView.event = event
     }
 }

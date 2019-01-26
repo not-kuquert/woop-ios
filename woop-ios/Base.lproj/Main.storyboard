@@ -29,80 +29,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="319.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tsc-Sn-ArY" userLabel="Shadow View">
-                                                    <rect key="frame" x="31" y="19" width="313" height="282"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnF-Ad-akj" userLabel="Content Container">
-                                                    <rect key="frame" x="31" y="19" width="313" height="282"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4sB-Fr-ql6" userLabel="Background Image">
-                                                            <rect key="frame" x="0.0" y="0.0" width="313" height="282"/>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell-foreground-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="I1G-zz-iIa" userLabel="Background Gradient">
-                                                            <rect key="frame" x="0.0" y="0.0" width="313" height="282"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feira de adoção de animais na Redenção" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Wh-Fc-s93" userLabel="TItle">
-                                                            <rect key="frame" x="16" y="16" width="281" height="80"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="80" id="uhJ-S0-W7R"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 29,90" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz9-M5-JIJ" userLabel="Price">
-                                                            <rect key="frame" x="226" y="245" width="71" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cS-a2-iza" customClass="DateView" customModule="woop_ios" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="185" width="85" height="89"/>
-                                                            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.3968318634969325" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="89" id="ZGY-dd-Dwl"/>
-                                                                <constraint firstAttribute="width" constant="85" id="eHt-q4-YPP"/>
-                                                            </constraints>
-                                                        </view>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="2Wh-Fc-s93" firstAttribute="top" secondItem="pnF-Ad-akj" secondAttribute="top" constant="16" id="2fh-ch-b9y"/>
-                                                        <constraint firstAttribute="bottom" secondItem="4sB-Fr-ql6" secondAttribute="bottom" id="3po-1T-aNd"/>
-                                                        <constraint firstItem="2cS-a2-iza" firstAttribute="leading" secondItem="pnF-Ad-akj" secondAttribute="leading" constant="8" id="E25-ZQ-TB9"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Bz9-M5-JIJ" secondAttribute="bottom" constant="16" id="Fk5-bC-StI"/>
-                                                        <constraint firstAttribute="bottom" secondItem="2cS-a2-iza" secondAttribute="bottom" constant="8" id="GSR-7p-2kD"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Bz9-M5-JIJ" secondAttribute="trailing" constant="16" id="HZu-IF-mwe"/>
-                                                        <constraint firstAttribute="trailing" secondItem="I1G-zz-iIa" secondAttribute="trailing" id="Hox-tW-VlM"/>
-                                                        <constraint firstItem="2Wh-Fc-s93" firstAttribute="leading" secondItem="pnF-Ad-akj" secondAttribute="leading" constant="16" id="LJ3-WE-WYI"/>
-                                                        <constraint firstAttribute="bottom" secondItem="I1G-zz-iIa" secondAttribute="bottom" id="P4o-2M-HGk"/>
-                                                        <constraint firstItem="I1G-zz-iIa" firstAttribute="leading" secondItem="pnF-Ad-akj" secondAttribute="leading" id="QPN-zy-KG2"/>
-                                                        <constraint firstItem="4sB-Fr-ql6" firstAttribute="top" secondItem="pnF-Ad-akj" secondAttribute="top" id="WjF-la-Rv3"/>
-                                                        <constraint firstItem="4sB-Fr-ql6" firstAttribute="leading" secondItem="pnF-Ad-akj" secondAttribute="leading" id="Xcp-zH-9BY"/>
-                                                        <constraint firstItem="I1G-zz-iIa" firstAttribute="top" secondItem="pnF-Ad-akj" secondAttribute="top" id="bdP-nS-euR"/>
-                                                        <constraint firstAttribute="trailing" secondItem="4sB-Fr-ql6" secondAttribute="trailing" id="rey-Ca-Hnm"/>
-                                                        <constraint firstAttribute="trailing" secondItem="2Wh-Fc-s93" secondAttribute="trailing" constant="16" id="zGL-Pz-Bxg"/>
-                                                    </constraints>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skV-fK-Wle" customClass="EventView" customModule="woop_ios" customModuleProvider="target">
+                                                    <rect key="frame" x="31" y="27" width="313" height="266"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Tsc-Sn-ArY" firstAttribute="leading" secondItem="pnF-Ad-akj" secondAttribute="leading" id="3ss-IN-ump"/>
-                                                <constraint firstItem="pnF-Ad-akj" firstAttribute="leading" secondItem="Hio-rm-uks" secondAttribute="leadingMargin" constant="16" id="5bN-SO-6W8"/>
-                                                <constraint firstItem="Tsc-Sn-ArY" firstAttribute="top" secondItem="pnF-Ad-akj" secondAttribute="top" id="It6-Ri-nru"/>
-                                                <constraint firstItem="Tsc-Sn-ArY" firstAttribute="bottom" secondItem="pnF-Ad-akj" secondAttribute="bottom" id="IyH-Bq-9Zh"/>
-                                                <constraint firstItem="Tsc-Sn-ArY" firstAttribute="trailing" secondItem="pnF-Ad-akj" secondAttribute="trailing" id="Qa4-mI-TOO"/>
-                                                <constraint firstItem="pnF-Ad-akj" firstAttribute="top" secondItem="Hio-rm-uks" secondAttribute="topMargin" constant="8" id="Wki-zp-iAe"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="pnF-Ad-akj" secondAttribute="bottom" constant="8" id="j2g-XD-u87"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="pnF-Ad-akj" secondAttribute="trailing" constant="16" id="vP4-om-tSt"/>
+                                                <constraint firstItem="skV-fK-Wle" firstAttribute="top" secondItem="Hio-rm-uks" secondAttribute="topMargin" constant="16" id="0Vy-W9-zg1"/>
+                                                <constraint firstItem="skV-fK-Wle" firstAttribute="leading" secondItem="Hio-rm-uks" secondAttribute="leadingMargin" constant="16" id="2AY-hD-tcY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="skV-fK-Wle" secondAttribute="trailing" constant="16" id="Y9v-jV-0AL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="skV-fK-Wle" secondAttribute="bottom" constant="16" id="qed-Vb-uSi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="backgroundImageView" destination="4sB-Fr-ql6" id="Waj-F5-9VC"/>
-                                            <outlet property="contentContainerView" destination="pnF-Ad-akj" id="8l7-hk-YQP"/>
-                                            <outlet property="dateView" destination="2cS-a2-iza" id="Uop-Je-45l"/>
-                                            <outlet property="priceLabel" destination="Bz9-M5-JIJ" id="CLG-Ao-42h"/>
-                                            <outlet property="shadowView" destination="Tsc-Sn-ArY" id="K7h-96-qZ2"/>
-                                            <outlet property="titleLabel" destination="2Wh-Fc-s93" id="DaO-Q3-bV6"/>
+                                            <outlet property="eventView" destination="skV-fK-Wle" id="7vA-ya-JRY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -150,20 +89,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8s-LR-f6K" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="806.5"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HY0-XX-oO7">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HY0-XX-oO7" customClass="EventView" customModule="woop_ios" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="16" width="359" height="320"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENT VIEW CONTAINER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaT-Eb-6uA">
-                                                        <rect key="frame" x="81" y="149.5" width="197" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="vaT-Eb-6uA" firstAttribute="centerX" secondItem="HY0-XX-oO7" secondAttribute="centerX" id="9vL-Bk-J87"/>
-                                                    <constraint firstItem="vaT-Eb-6uA" firstAttribute="centerY" secondItem="HY0-XX-oO7" secondAttribute="centerY" id="YR6-GN-QF1"/>
                                                     <constraint firstAttribute="height" constant="320" id="qd2-eT-a1S"/>
                                                 </constraints>
                                             </view>
@@ -219,6 +148,7 @@
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="rX7-Jh-s9o" id="nnJ-4S-qtd"/>
+                        <outlet property="eventView" destination="HY0-XX-oO7" id="UOE-49-g8I"/>
                         <outlet property="mapView" destination="8Oq-YX-njI" id="6ai-is-RX8"/>
                     </connections>
                 </viewController>
@@ -245,8 +175,4 @@
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="cell-foreground-gradient" width="343" height="120"/>
-        <image name="placeholder" width="338" height="338"/>
-    </resources>
 </document>
