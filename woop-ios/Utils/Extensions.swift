@@ -22,6 +22,31 @@ extension UIView {
             self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottom)
             ])
     }
+    
+    private func baseShadow() {
+        layer.shadowColor = UIColor.black.cgColor
+        layer.rasterizationScale = UIScreen.main.scale
+        layer.shouldRasterize = true
+        layer.masksToBounds = false
+    }
+    
+    func cellShadow(cornerRadius: CGFloat = 8) {
+        baseShadow()
+        layer.cornerRadius = cornerRadius
+        layer.shadowOpacity = 0.7
+        layer.shadowRadius = 3.0
+        layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        layer.shadowPath = UIBezierPath(roundedRect: bounds,
+                                        cornerRadius: cornerRadius).cgPath
+    }
+    
+    func headerShadow() {
+        baseShadow()
+        layer.shadowOpacity = 0.2
+        layer.shadowRadius = 1.0
+        layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+    }
 }
 
 
@@ -31,3 +56,4 @@ extension DateFormatter {
         self.dateFormat = dateFormat
     }
 }
+
