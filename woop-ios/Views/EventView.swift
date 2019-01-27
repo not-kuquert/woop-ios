@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventView: UIView, NibLoadable {
+@IBDesignable final class EventView: UIView, NibLoadable {
     private var shadowBlur: CGFloat = 8
     private var shadowOpacity: Float = 0.7
     private var shadowColor: UIColor = UIColor.red

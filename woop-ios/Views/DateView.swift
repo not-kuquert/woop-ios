@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DateView: UIView, NibLoadable {
+@IBDesignable final class DateView: UIView, NibLoadable {
     @IBOutlet var dayLabel: UILabel!
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var yearLabel: UILabel!

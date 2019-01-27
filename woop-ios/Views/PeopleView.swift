@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PeopleView: UIView, NibLoadable {
+@IBDesignable final class PeopleView: UIView, NibLoadable {
     
     @IBOutlet var peoplePictures: [UIImageView]!
     @IBOutlet var extraPeopleView: UIView!
