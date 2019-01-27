@@ -38,14 +38,16 @@ extension Event {
         people = try container.decode([Person].self, forKey: .people)
         cupons = try container.decode([Cupon].self, forKey: .cupons)
 
-        if let stringValue = try? container.decode(String.self, forKey: .latitude) {
-            latitude = Double(stringValue) ?? 0
+        if let stringValue = try? container.decode(String.self, forKey: .latitude),
+            let doubleValue = Double(stringValue){
+            latitude = doubleValue
         } else {
             latitude = try container.decode(Double.self, forKey: .latitude)
         }
 
-        if let stringValue = try? container.decode(String.self, forKey: .longitude) {
-            longitude = Double(stringValue) ?? 0 // TODO: Remove this fallback
+        if let stringValue = try? container.decode(String.self, forKey: .longitude),
+            let doubleValue = Double(stringValue) {
+            longitude = doubleValue
         } else {
             longitude = try container.decode(Double.self, forKey: .longitude)
         }
