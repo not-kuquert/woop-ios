@@ -39,6 +39,14 @@ class woop_iosTests: XCTestCase {
         XCTAssertEqual(event.date, Date(timeIntervalSince1970: 1534784400000 / 1000 ))
     }
     
+    func testHttpsTranslation() {
+        XCTAssertTrue(event.image.hasPrefix("http://"))
+        XCTAssertEqual(event.imageUrl.scheme, "https")
+        
+        XCTAssertTrue(event.people.first?.picture.hasPrefix("http://") ?? false)
+        XCTAssertEqual(event.people.first?.pictureUrl.scheme, "https")
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         measure {
