@@ -22,11 +22,36 @@ class woop_iosUITests: XCTestCase {
     }
 
     override func tearDown() {
+        
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testA() {
+        XCUIApplication().scrollViews.otherElements.buttons["Check-in"].tap()
+        
     }
+    
+    func testExample() {
+        let app = XCUIApplication()
+        app.tables.children(matching: .cell).element(boundBy: 0).children(matching: .other).element(boundBy: 1).tap()
+        app.scrollViews.otherElements.buttons["Check-in"].tap()
+        
+        app.keyboards.keys["m"].tap()
+        app.keyboards.keys["space"].tap()
+        app.keyboards.keys["k"].tap()
+        
+        app.buttons["Return"].tap()
+        
+        app.keys["m"].tap()
+        app.keys["@"].tap()
+        app.keys["k"].tap()
+        app.keys["."].tap()
+        app.keys["c"].tap()
+        
+        app.alerts["Precisamos de algumas informanções"].buttons["CHECK-IN"].tap()
+        app.alerts["Deu tudo certo, te esperamos no evento"].buttons["Ok"].tap()
+        
+    }
+    
 }

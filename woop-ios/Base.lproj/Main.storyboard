@@ -31,6 +31,9 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skV-fK-Wle" customClass="EventView" customModule="woop_ios" customModuleProvider="target">
                                                     <rect key="frame" x="23" y="19" width="329" height="282"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -40,6 +43,9 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="skV-fK-Wle" secondAttribute="bottom" constant="8" id="qed-Vb-uSi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="eventView" destination="skV-fK-Wle" id="7vA-ya-JRY"/>
                                         </connections>
