@@ -10,13 +10,20 @@
 import XCTest
 
 class woop_iosTests: XCTestCase {
+    
+    var event: Event!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let promisse = expectation(description: "Wait to load resource from json")
+        
+        EventsFacade.sharedLocal.event(id: "1") { (event, error) in
+            self.event = event
+            promisse.fulfill()
+        }
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    
+    override func tearDown() {}
     
     func testDateFormat() {
         let dateView = DateView()
