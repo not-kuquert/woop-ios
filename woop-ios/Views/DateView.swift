@@ -14,7 +14,7 @@ import UIKit
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var yearLabel: UILabel!
 
-    private var dayFormatter = DateFormatter(dateFormat: "d")
+    private var dayFormatter = DateFormatter(dateFormat: "dd")
     private var monthFormatter = DateFormatter(dateFormat: "MMM")
     private var yearFormatter = DateFormatter(dateFormat: "yyyy")
 
@@ -35,10 +35,6 @@ import UIKit
     override init(frame: CGRect) {
         super.init(frame: frame)
         fromNib()
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
     }
     
     override func draw(_ rect: CGRect) {
