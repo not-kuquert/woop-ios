@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Eventos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="woop_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nfc-Ez-y35">
-                                <rect key="frame" x="0.0" y="92.5" width="375" height="574.5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="320" id="Dak-4c-3su" customClass="EventTableViewCell" customModule="woop_ios" customModuleProvider="target">
@@ -30,14 +30,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skV-fK-Wle" customClass="EventView" customModule="woop_ios" customModuleProvider="target">
-                                                    <rect key="frame" x="31" y="27" width="313" height="266"/>
+                                                    <rect key="frame" x="23" y="19" width="329" height="282"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="skV-fK-Wle" firstAttribute="top" secondItem="Hio-rm-uks" secondAttribute="topMargin" constant="16" id="0Vy-W9-zg1"/>
-                                                <constraint firstItem="skV-fK-Wle" firstAttribute="leading" secondItem="Hio-rm-uks" secondAttribute="leadingMargin" constant="16" id="2AY-hD-tcY"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="skV-fK-Wle" secondAttribute="trailing" constant="16" id="Y9v-jV-0AL"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="skV-fK-Wle" secondAttribute="bottom" constant="16" id="qed-Vb-uSi"/>
+                                                <constraint firstItem="skV-fK-Wle" firstAttribute="top" secondItem="Hio-rm-uks" secondAttribute="topMargin" constant="8" id="0Vy-W9-zg1"/>
+                                                <constraint firstItem="skV-fK-Wle" firstAttribute="leading" secondItem="Hio-rm-uks" secondAttribute="leadingMargin" constant="8" id="2AY-hD-tcY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="skV-fK-Wle" secondAttribute="trailing" constant="8" id="Y9v-jV-0AL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="skV-fK-Wle" secondAttribute="bottom" constant="8" id="qed-Vb-uSi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -46,28 +46,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7l-TV-PGY">
-                                <rect key="frame" x="16" y="64" width="343" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Nfc-Ez-y35" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5We-fc-UGv"/>
-                            <constraint firstItem="m7l-TV-PGY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="CpD-bV-ILM"/>
                             <constraint firstItem="Nfc-Ez-y35" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Lgm-vA-XC1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m7l-TV-PGY" secondAttribute="trailing" constant="16" id="Nxc-EO-dSd"/>
-                            <constraint firstItem="Nfc-Ez-y35" firstAttribute="top" secondItem="m7l-TV-PGY" secondAttribute="bottom" constant="8" id="UVu-uv-sPX"/>
+                            <constraint firstItem="Nfc-Ez-y35" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cvV-71-LHy"/>
                             <constraint firstItem="Nfc-Ez-y35" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="lcZ-QZ-bZe"/>
-                            <constraint firstItem="m7l-TV-PGY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yzE-bO-9r7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="krY-UF-vg0"/>
+                    <navigationItem key="navigationItem" title="Eventos" id="krY-UF-vg0"/>
                     <connections>
-                        <outlet property="label" destination="m7l-TV-PGY" id="pq7-F8-hQh"/>
                         <outlet property="tableView" destination="Nfc-Ez-y35" id="x23-ka-Tmr"/>
                     </connections>
                 </viewController>
@@ -117,11 +107,14 @@
                                             </label>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dul-Pv-fJN">
                                                 <rect key="frame" x="16" y="401" width="343" height="32"/>
-                                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="4g6-M7-Ey9"/>
                                                 </constraints>
-                                                <state key="normal" title="CHECK-IN"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="CHECK-IN">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

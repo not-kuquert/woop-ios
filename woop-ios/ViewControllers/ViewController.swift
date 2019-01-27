@@ -13,8 +13,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var label: UILabel!
-    
     private var events: [Event] = []
     
     override func viewDidLoad() {
@@ -62,7 +60,6 @@ extension ViewController : UITableViewDataSource {
 
 extension ViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Should show event detail view \(indexPath.row)")
         navigationController?.pushViewController(EventDetailViewController.newInstance(event: events[indexPath.row]),
                                                  animated: true)
     }
