@@ -68,6 +68,34 @@ class woop_iosTests: XCTestCase {
         XCTAssertEqual(eventView.priceLabel.text, "GRÁTIS")
     }
     
+    func testExtraPeopleCount() {
+        let peopleView = PeopleView()
+        
+        let p1 = Person ( id: "1",
+                          eventId: "1",
+                          name: "Alexandre Pires",
+                          picture: "https://images.pexels.com/photos/1292306/pexels-photo-1292306.jpeg")
+        
+        peopleView.people = [p1]
+        XCTAssertEqual(peopleView.extraPeopleView.isHidden, true)
+        
+        peopleView.people = [p1, p1]
+        XCTAssertEqual(peopleView.extraPeopleView.isHidden, true)
+        
+        peopleView.people = [p1, p1, p1]
+        XCTAssertEqual(peopleView.extraPeopleView.isHidden, false)
+        XCTAssertEqual(peopleView.extraPeopleLabel.text, "+1")
+        
+        peopleView.people = [p1, p1, p1, p1]
+        XCTAssertEqual(peopleView.extraPeopleView.isHidden, false)
+        XCTAssertEqual(peopleView.extraPeopleLabel.text, "+2")
+        
+        peopleView.people = [p1, p1, p1, p1, p1]
+        XCTAssertEqual(peopleView.extraPeopleView.isHidden, false)
+        XCTAssertEqual(peopleView.extraPeopleLabel.text, "+3")
+        
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         measure {
