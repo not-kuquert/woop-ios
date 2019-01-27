@@ -18,9 +18,14 @@ extension Resource where A: Decodable {
         urlRequest = URLRequest(url: url)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        //TODO: get rid of code duplication
         self.parse = { data in
             do {
-                return (try JSONDecoder().decode(A.self, from: data), nil)
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .millisecondsSince1970
+                
+                return (try decoder.decode(A.self, from: data), nil)
             } catch let error {
                 return (nil, error)
             }
@@ -41,7 +46,10 @@ extension Resource where A: Decodable {
         
         self.parse = { data in
             do {
-                return (try JSONDecoder().decode(A.self, from: data), nil)
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .millisecondsSince1970
+                
+                return (try decoder.decode(A.self, from: data), nil)
             } catch let error {
                 return (nil, error)
             }
