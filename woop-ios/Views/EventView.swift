@@ -20,9 +20,11 @@ class EventView: UIView, NibLoadable {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var dateView: DateView!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var peopleView: PeopleView!
     
     var event: Event? {
         didSet {
+            peopleView.people = event?.people
             titleLabel.text = event?.title
             dateView.date = event?.date
             priceLabel.text = String(event?.price ?? 0) //TODO: Remove this fallback to zero

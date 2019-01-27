@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="backgroundImageView" destination="bjg-uE-1eZ" id="s6o-J2-9CN"/>
                 <outlet property="dateView" destination="SAs-Ir-rrt" id="edo-Nc-dtJ"/>
+                <outlet property="peopleView" destination="L2J-q1-3J7" id="efI-Ld-fg0"/>
                 <outlet property="priceLabel" destination="ZQd-zn-Lfg" id="H5t-4G-Jka"/>
                 <outlet property="titleLabel" destination="eCf-D1-RfX" id="wvQ-lj-0kx"/>
             </connections>
@@ -50,13 +51,22 @@
                                 <constraint firstAttribute="width" constant="85" id="x4o-Qb-uu5"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2J-q1-3J7" customClass="PeopleView" customModule="woop_ios" customModuleProvider="target">
+                            <rect key="frame" x="8" y="96" width="359" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="TwJ-lV-E5r"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstItem="bjg-uE-1eZ" firstAttribute="top" secondItem="TTO-Ka-IiS" secondAttribute="top" id="38H-TO-FBN"/>
                         <constraint firstItem="eCf-D1-RfX" firstAttribute="leading" secondItem="TTO-Ka-IiS" secondAttribute="leading" constant="16" id="6Ku-nN-h5r"/>
+                        <constraint firstItem="L2J-q1-3J7" firstAttribute="leading" secondItem="TTO-Ka-IiS" secondAttribute="leading" constant="8" id="83F-Ts-G5q"/>
                         <constraint firstAttribute="bottom" secondItem="ZQd-zn-Lfg" secondAttribute="bottom" constant="16" id="9bu-a0-XQj"/>
                         <constraint firstAttribute="trailing" secondItem="bjg-uE-1eZ" secondAttribute="trailing" id="EBY-kX-aKe"/>
+                        <constraint firstAttribute="trailing" secondItem="L2J-q1-3J7" secondAttribute="trailing" constant="8" id="OZt-8s-P2z"/>
                         <constraint firstItem="SAs-Ir-rrt" firstAttribute="leading" secondItem="TTO-Ka-IiS" secondAttribute="leading" constant="8" id="ZZ4-kg-mQn"/>
+                        <constraint firstItem="L2J-q1-3J7" firstAttribute="top" secondItem="eCf-D1-RfX" secondAttribute="bottom" id="de3-2Z-Jp9"/>
                         <constraint firstItem="eCf-D1-RfX" firstAttribute="top" secondItem="TTO-Ka-IiS" secondAttribute="top" constant="16" id="gxC-EG-E9K"/>
                         <constraint firstAttribute="trailing" secondItem="ZQd-zn-Lfg" secondAttribute="trailing" constant="16" id="hAz-Pw-Kmx"/>
                         <constraint firstAttribute="trailing" secondItem="eCf-D1-RfX" secondAttribute="trailing" constant="16" id="hia-y9-4CY"/>
