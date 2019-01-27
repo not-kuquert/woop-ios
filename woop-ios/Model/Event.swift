@@ -12,13 +12,17 @@ struct Event: Codable {
     var id: String
     var title: String
     var price: Double
-    var image: String
+    private var image: String
     var latitude: Double
     var longitude: Double
     var description: String
     var date: Date
     var people: [Person]
     var cupons: [Cupon]
+    
+    var imageUrl: URL {
+        return URL(string: image.replacingOccurrences(of: "http://", with: "https://"))!
+    }
 }
 
 extension Event {

@@ -9,6 +9,7 @@
 import UIKit
 
 class PeopleView: UIView, NibLoadable {
+    
     @IBOutlet var peoplePictures: [UIImageView]!
     @IBOutlet var extraPeopleView: UIView!
     @IBOutlet var extraPeopleLabel: UILabel!
@@ -35,11 +36,8 @@ class PeopleView: UIView, NibLoadable {
         extraPeopleLabel.text = "+\(extraCount)"
 
         for (index, imageView) in peoplePictures.enumerated() {
-            if let image = people?.get(at: index)?.picture.replacingOccurrences(of: "http://",
-                                                                                with: "https://") {
-                imageView.kf.setImage(with: URL(string: image),
-                                      placeholder: UIImage(named: "naruto"))
-            }
+            imageView.kf.setImage(with: people?.get(at: index)?.pictureUrl,
+                                  placeholder: R.image.profilePlaceholder())
         }
     }
 

@@ -28,14 +28,11 @@ class EventView: UIView, NibLoadable {
             titleLabel.text = event?.title
             dateView.date = event?.date
             
+            backgroundImageView?.kf.setImage(with: event?.imageUrl,
+                                             placeholder: R.image.placeholder())
+            
             if let price = event?.price, price > 0 {
                 priceLabel.text = R.string.localizable.price(String(format: "%.2f", price))
-            }
-
-            // TODO: Move this gambi to the decoder
-            if let a = event?.image.replacingOccurrences(of: "http://", with: "https://") {
-                backgroundImageView?.kf.setImage(with: URL(string: a),
-                                                 placeholder: UIImage(named: "placeholder"))
             }
         }
     }
