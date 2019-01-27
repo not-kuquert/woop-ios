@@ -49,12 +49,16 @@ class PeopleView: UIView, NibLoadable {
     }
 
     override func draw(_: CGRect) {
-        extraPeopleView.layer.cornerRadius = extraPeopleView.frame.size.height / 2
-
         for imageView in peoplePictures {
-            imageView.layer.cornerRadius = imageView.frame.size.height / 2
-            imageView.layer.borderWidth = 3
-            imageView.layer.borderColor = UIColor.white.cgColor
+            configureBorder(in: imageView)
         }
+        
+        configureBorder(in: extraPeopleView)
+    }
+    
+    private func configureBorder(in view: UIView) {
+        view.layer.cornerRadius = view.frame.size.height / 2
+        view.layer.borderWidth = 3
+        view.layer.borderColor = UIColor.white.cgColor
     }
 }
