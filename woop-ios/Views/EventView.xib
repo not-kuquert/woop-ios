@@ -15,6 +15,7 @@
                 <outlet property="dateView" destination="SAs-Ir-rrt" id="edo-Nc-dtJ"/>
                 <outlet property="peopleView" destination="L2J-q1-3J7" id="efI-Ld-fg0"/>
                 <outlet property="priceLabel" destination="ZQd-zn-Lfg" id="H5t-4G-Jka"/>
+                <outlet property="priceView" destination="tFz-BX-vMH" id="BiB-Cc-tAi"/>
                 <outlet property="titleLabel" destination="eCf-D1-RfX" id="wvQ-lj-0kx"/>
             </connections>
         </placeholder>
@@ -29,50 +30,60 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="bjg-uE-1eZ" userLabel="Background Image">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feira de adoção de animais na Redenção" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCf-D1-RfX" userLabel="TItle">
-                            <rect key="frame" x="16" y="16" width="343" height="80"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="80" id="rAM-Fh-Uv7"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 29,90" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQd-zn-Lfg" userLabel="Price">
-                            <rect key="frame" x="288" y="283" width="71" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feira de adoção de animais na Redenção" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCf-D1-RfX" userLabel="TItle">
+                            <rect key="frame" x="16" y="16" width="255" height="100.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAs-Ir-rrt" customClass="DateView" customModule="woop_ios" customModuleProvider="target">
-                            <rect key="frame" x="8" y="223" width="85" height="89"/>
+                            <rect key="frame" x="287" y="16" width="72" height="75"/>
                             <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.39683186349999999" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="89" id="iUM-l0-Q8i"/>
-                                <constraint firstAttribute="width" constant="85" id="x4o-Qb-uu5"/>
+                                <constraint firstAttribute="height" constant="75" id="CFA-qq-l6O"/>
+                                <constraint firstAttribute="width" constant="72" id="SCA-qq-XVU"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2J-q1-3J7" customClass="PeopleView" customModule="woop_ios" customModuleProvider="target">
-                            <rect key="frame" x="8" y="96" width="359" height="40"/>
+                            <rect key="frame" x="16" y="264" width="219.5" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="TwJ-lV-E5r"/>
+                                <constraint firstAttribute="height" constant="40" id="J2g-tB-YCn"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFz-BX-vMH">
+                            <rect key="frame" x="267.5" y="264" width="91.5" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRÁTIS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQd-zn-Lfg" userLabel="Price">
+                                    <rect key="frame" x="16" y="8" width="59.5" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ZQd-zn-Lfg" secondAttribute="trailing" constant="16" id="1z8-2Q-jVz"/>
+                                <constraint firstItem="ZQd-zn-Lfg" firstAttribute="top" secondItem="tFz-BX-vMH" secondAttribute="top" constant="8" id="5bQ-S8-83s"/>
+                                <constraint firstAttribute="height" constant="40" id="d0J-LY-grS"/>
+                                <constraint firstAttribute="bottom" secondItem="ZQd-zn-Lfg" secondAttribute="bottom" constant="8" id="gJp-eI-Wd7"/>
+                                <constraint firstItem="ZQd-zn-Lfg" firstAttribute="leading" secondItem="tFz-BX-vMH" secondAttribute="leading" constant="16" id="zo3-ud-aKA"/>
                             </constraints>
                         </view>
                     </subviews>
                     <constraints>
                         <constraint firstItem="bjg-uE-1eZ" firstAttribute="top" secondItem="TTO-Ka-IiS" secondAttribute="top" id="38H-TO-FBN"/>
                         <constraint firstItem="eCf-D1-RfX" firstAttribute="leading" secondItem="TTO-Ka-IiS" secondAttribute="leading" constant="16" id="6Ku-nN-h5r"/>
-                        <constraint firstItem="L2J-q1-3J7" firstAttribute="leading" secondItem="TTO-Ka-IiS" secondAttribute="leading" constant="8" id="83F-Ts-G5q"/>
-                        <constraint firstAttribute="bottom" secondItem="ZQd-zn-Lfg" secondAttribute="bottom" constant="16" id="9bu-a0-XQj"/>
                         <constraint firstAttribute="trailing" secondItem="bjg-uE-1eZ" secondAttribute="trailing" id="EBY-kX-aKe"/>
-                        <constraint firstAttribute="trailing" secondItem="L2J-q1-3J7" secondAttribute="trailing" constant="8" id="OZt-8s-P2z"/>
-                        <constraint firstItem="SAs-Ir-rrt" firstAttribute="leading" secondItem="TTO-Ka-IiS" secondAttribute="leading" constant="8" id="ZZ4-kg-mQn"/>
-                        <constraint firstItem="L2J-q1-3J7" firstAttribute="top" secondItem="eCf-D1-RfX" secondAttribute="bottom" id="de3-2Z-Jp9"/>
+                        <constraint firstItem="SAs-Ir-rrt" firstAttribute="leading" secondItem="eCf-D1-RfX" secondAttribute="trailing" constant="16" id="ELG-M8-mzX"/>
+                        <constraint firstItem="SAs-Ir-rrt" firstAttribute="top" secondItem="TTO-Ka-IiS" secondAttribute="top" constant="16" id="Rdi-C3-WBX"/>
+                        <constraint firstAttribute="bottom" secondItem="tFz-BX-vMH" secondAttribute="bottom" constant="16" id="Suh-QU-g1e"/>
+                        <constraint firstAttribute="trailing" secondItem="tFz-BX-vMH" secondAttribute="trailing" constant="16" id="VrA-84-GAl"/>
+                        <constraint firstAttribute="bottom" secondItem="L2J-q1-3J7" secondAttribute="bottom" constant="16" id="XA9-b4-MOT"/>
+                        <constraint firstItem="tFz-BX-vMH" firstAttribute="leading" secondItem="L2J-q1-3J7" secondAttribute="trailing" constant="32" id="Yty-FV-CL4"/>
+                        <constraint firstItem="L2J-q1-3J7" firstAttribute="leading" secondItem="TTO-Ka-IiS" secondAttribute="leading" constant="16" id="ebE-XC-vks"/>
                         <constraint firstItem="eCf-D1-RfX" firstAttribute="top" secondItem="TTO-Ka-IiS" secondAttribute="top" constant="16" id="gxC-EG-E9K"/>
-                        <constraint firstAttribute="trailing" secondItem="ZQd-zn-Lfg" secondAttribute="trailing" constant="16" id="hAz-Pw-Kmx"/>
-                        <constraint firstAttribute="trailing" secondItem="eCf-D1-RfX" secondAttribute="trailing" constant="16" id="hia-y9-4CY"/>
                         <constraint firstAttribute="bottom" secondItem="bjg-uE-1eZ" secondAttribute="bottom" id="kHN-xN-8hO"/>
                         <constraint firstItem="bjg-uE-1eZ" firstAttribute="leading" secondItem="TTO-Ka-IiS" secondAttribute="leading" id="kq8-hR-Oy2"/>
-                        <constraint firstAttribute="bottom" secondItem="SAs-Ir-rrt" secondAttribute="bottom" constant="8" id="rcx-Bw-eGl"/>
+                        <constraint firstAttribute="trailing" secondItem="SAs-Ir-rrt" secondAttribute="trailing" constant="16" id="lZt-Nm-ZKb"/>
                     </constraints>
                 </view>
             </subviews>

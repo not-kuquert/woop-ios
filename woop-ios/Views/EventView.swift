@@ -17,6 +17,7 @@ class EventView: UIView, NibLoadable {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
+    @IBOutlet weak var priceView: UIView!
     @IBOutlet var dateView: DateView!
     @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var peopleView: PeopleView!
@@ -26,7 +27,10 @@ class EventView: UIView, NibLoadable {
             peopleView.people = event?.people
             titleLabel.text = event?.title
             dateView.date = event?.date
-            priceLabel.text = String(event?.price ?? 0) // TODO: Remove this fallback to zero
+            
+            if let price = event?.price, price > 0 {
+                priceLabel.text = R.string.localizable.price(String(format: "%.2f", price))
+            }
 
             // TODO: Move this gambi to the decoder
             if let a = event?.image.replacingOccurrences(of: "http://", with: "https://") {
@@ -58,5 +62,7 @@ class EventView: UIView, NibLoadable {
         backgroundImageView.layer.cornerRadius = cardRadius
         backgroundImageView.clipsToBounds = true
         backgroundImageView.contentMode = .scaleAspectFill
-    }
+        
+        priceView.layer.cornerRadius = priceView.frame.size.height/2
+    }    
 }

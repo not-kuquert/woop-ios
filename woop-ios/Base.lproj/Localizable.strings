@@ -21,3 +21,5 @@
 "alert_checkin_button" = "CHECK-IN";
 
 "address" = "%@, %@ - %@";
+
+"price" = "R$ %@";

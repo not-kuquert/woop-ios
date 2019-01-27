@@ -85,7 +85,7 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return 320.0
+        return 420.0
     }
 }
 
