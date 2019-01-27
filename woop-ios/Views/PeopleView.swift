@@ -8,8 +8,8 @@
 
 import UIKit
 
-@IBDesignable final class PeopleView: UIView, NibLoadable {
-    
+@IBDesignable
+final class PeopleView: UIView, NibLoadable {
     @IBOutlet var peoplePictures: [UIImageView]!
     @IBOutlet var extraPeopleView: UIView!
     @IBOutlet var extraPeopleLabel: UILabel!
@@ -44,19 +44,5 @@ import UIKit
     private func calculateExtra(people: [Person]?) -> Int {
         guard let people = people else { return 0 }
         return max((people.count - peoplePictures.count), 0)
-    }
-
-    override func draw(_: CGRect) {
-        for imageView in peoplePictures {
-            configureBorder(in: imageView)
-        }
-        
-        configureBorder(in: extraPeopleView)
-    }
-    
-    private func configureBorder(in view: UIView) {
-        view.layer.cornerRadius = view.frame.size.height / 2
-        view.layer.borderWidth = 3
-        view.layer.borderColor = UIColor.white.cgColor
     }
 }

@@ -35,6 +35,10 @@
 		64766C2021FD728C007AF7E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64766C1E21FD728C007AF7E4 /* Localizable.strings */; };
 		64766C2221FDF7F0007AF7E4 /* PeopleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64766C2121FDF7F0007AF7E4 /* PeopleView.xib */; };
 		64766C2421FDF7FF007AF7E4 /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C2321FDF7FF007AF7E4 /* PeopleView.swift */; };
+		64766C2621FE53F7007AF7E4 /* Roundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C2521FE53F7007AF7E4 /* Roundable.swift */; };
+		64766C2A21FE6487007AF7E4 /* RoundBorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C2921FE6487007AF7E4 /* RoundBorderedButton.swift */; };
+		64766C2C21FE648E007AF7E4 /* RoundBorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C2B21FE648E007AF7E4 /* RoundBorderedView.swift */; };
+		64766C2E21FE6496007AF7E4 /* RoundBorderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C2D21FE6496007AF7E4 /* RoundBorderedImageView.swift */; };
 		64A6B46B21FAC3A50075C260 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6B46A21FAC3A50075C260 /* HttpMethod.swift */; };
 		64A6B48B21FAF1B20075C260 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A6B47221FAEF250075C260 /* Kingfisher.framework */; };
 		64A6B48C21FAF1B20075C260 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A6B47321FAEF250075C260 /* Rswift.framework */; };
@@ -95,6 +99,10 @@
 		64766C1F21FD728C007AF7E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		64766C2121FDF7F0007AF7E4 /* PeopleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleView.xib; sourceTree = "<group>"; };
 		64766C2321FDF7FF007AF7E4 /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
+		64766C2521FE53F7007AF7E4 /* Roundable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roundable.swift; sourceTree = "<group>"; };
+		64766C2921FE6487007AF7E4 /* RoundBorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBorderedButton.swift; sourceTree = "<group>"; };
+		64766C2B21FE648E007AF7E4 /* RoundBorderedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBorderedView.swift; sourceTree = "<group>"; };
+		64766C2D21FE6496007AF7E4 /* RoundBorderedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBorderedImageView.swift; sourceTree = "<group>"; };
 		64A6B46A21FAC3A50075C260 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		64A6B47221FAEF250075C260 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		64A6B47321FAEF250075C260 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
@@ -230,6 +238,17 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		64766C2F21FE64F6007AF7E4 /* RoundBordered */ = {
+			isa = PBXGroup;
+			children = (
+				64766C2521FE53F7007AF7E4 /* Roundable.swift */,
+				64766C2921FE6487007AF7E4 /* RoundBorderedButton.swift */,
+				64766C2B21FE648E007AF7E4 /* RoundBorderedView.swift */,
+				64766C2D21FE6496007AF7E4 /* RoundBorderedImageView.swift */,
+			);
+			path = RoundBordered;
+			sourceTree = "<group>";
+		};
 		64A6B46E21FAC5700075C260 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +280,7 @@
 		64A6B49021FAFACE0075C260 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				64766C2F21FE64F6007AF7E4 /* RoundBordered */,
 				64766C1121FCF3AA007AF7E4 /* DateView.swift */,
 				64766C0D21FCF201007AF7E4 /* DateView.xib */,
 				64766C1A21FD06E6007AF7E4 /* EventView.swift */,
@@ -456,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64766C2621FE53F7007AF7E4 /* Roundable.swift in Sources */,
 				646EA9FA21F93F8D001DA03D /* ViewController.swift in Sources */,
 				64A6B48E21FAF5010075C260 /* R.generated.swift in Sources */,
 				64766C2421FDF7FF007AF7E4 /* PeopleView.swift in Sources */,
@@ -473,7 +494,10 @@
 				646EAA3021F94141001DA03D /* Service.swift in Sources */,
 				646EAA3521F94335001DA03D /* Person.swift in Sources */,
 				646EA9F821F93F8D001DA03D /* AppDelegate.swift in Sources */,
+				64766C2A21FE6487007AF7E4 /* RoundBorderedButton.swift in Sources */,
+				64766C2E21FE6496007AF7E4 /* RoundBorderedImageView.swift in Sources */,
 				646EAA3B21F94621001DA03D /* EventsFacade.swift in Sources */,
+				64766C2C21FE648E007AF7E4 /* RoundBorderedView.swift in Sources */,
 				64A6B49621FAFE940075C260 /* EventDetailViewController.swift in Sources */,
 				646EAA2721F9407F001DA03D /* Webservice.swift in Sources */,
 				64766C1B21FD06E6007AF7E4 /* EventView.swift in Sources */,
@@ -705,6 +729,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BJXVASWXX8;
 				INFOPLIST_FILE = "woop-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -725,6 +750,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BJXVASWXX8;
 				INFOPLIST_FILE = "woop-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -744,6 +770,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BJXVASWXX8;
 				INFOPLIST_FILE = "woop-iosUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -763,6 +790,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BJXVASWXX8;
 				INFOPLIST_FILE = "woop-iosUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

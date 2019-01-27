@@ -17,10 +17,6 @@ class EventTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-    }
-
     func render(event: Event) {
         eventView.event = event
     }

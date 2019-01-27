@@ -15,12 +15,11 @@
                 <outlet property="dateView" destination="SAs-Ir-rrt" id="edo-Nc-dtJ"/>
                 <outlet property="peopleView" destination="L2J-q1-3J7" id="efI-Ld-fg0"/>
                 <outlet property="priceLabel" destination="ZQd-zn-Lfg" id="H5t-4G-Jka"/>
-                <outlet property="priceView" destination="tFz-BX-vMH" id="BiB-Cc-tAi"/>
                 <outlet property="titleLabel" destination="eCf-D1-RfX" id="wvQ-lj-0kx"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="RoundBorderedView" customModule="woop_ios" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -48,7 +47,7 @@
                                 <constraint firstAttribute="height" constant="40" id="J2g-tB-YCn"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFz-BX-vMH">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFz-BX-vMH" customClass="RoundBorderedView" customModule="woop_ios" customModuleProvider="target">
                             <rect key="frame" x="267.5" y="264" width="91.5" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRÁTIS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQd-zn-Lfg" userLabel="Price">
@@ -86,6 +85,9 @@
                     </constraints>
                 </view>
             </subviews>
+            <accessibility key="accessibilityConfiguration" identifier="event-cell" label="EventCell">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="TTO-Ka-IiS" secondAttribute="trailing" id="2XJ-Rm-Ns3"/>
                 <constraint firstAttribute="bottom" secondItem="TTO-Ka-IiS" secondAttribute="bottom" id="38k-w7-gGf"/>
@@ -93,6 +95,11 @@
                 <constraint firstItem="TTO-Ka-IiS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zjx-0T-CtT"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="53.600000000000001" y="-107.94602698650675"/>
         </view>
     </objects>
