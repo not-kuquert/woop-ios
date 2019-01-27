@@ -9,15 +9,29 @@
 import Foundation
 
 struct EventsFacade {
-    static let shared = EventsFacade()
-    private static let loadLocally = false //TODO: Change this based on the schema
+    //TODO: Change this based on the schema
+    private static let loadLocally = false
     
-    private let service: Service = EventsFacade.loadLocally ? Mockservice() : Webservice()
+    private static func baseUrlWith(path: String) -> URL {
+        //TODO: Remove forced unwrap, add this to envVar
+        return URL(string: "https://5b840ba5db24a100142dcd8c.mockapi.io/api/")!.appendingPathComponent(path)
+    }
     
-    func events(completion: @escaping ([Event]?) -> ()) {
-        let resource = Resource<[Event]>(url: ApiRouter.events.url,
-                                         method: ApiRouter.events.method)
-        
-        service.get(resource: resource, completion: completion)
+    private static let service: Service = EventsFacade.loadLocally ? Mockservice() : Webservice()
+    
+    static func events(completion: @escaping ([Event]?) -> ()) {
+        let resource = Resource<[Event]>(get: EventsFacade.baseUrlWith(path: "events"))
+        EventsFacade.service.load(resource: resource, completion: completion)
+    }
+    
+    static func event(id: String, completion: @escaping (Event?) -> ()) {
+        let resource = Resource<Event>(get: EventsFacade.baseUrlWith(path: "events/\(id)"))
+        EventsFacade.service.load(resource: resource, completion: completion)
+    }
+    
+    static func checkIn(checkin: Checkin, completion: @escaping (EmptyResponse?) -> ()) {
+        let resource = Resource<EmptyResponse>(url: EventsFacade.baseUrlWith(path: "checkin"),
+                                               method: .post(checkin))
+        EventsFacade.service.load(resource: resource, completion: completion)
     }
 }

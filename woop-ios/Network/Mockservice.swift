@@ -10,7 +10,7 @@ import Foundation
 
 
 struct Mockservice: Service {
-    func get<T>(resource: Resource<T>, completion: @escaping (T?) -> ()) {
+    func load<T>(resource: Resource<T>, completion: @escaping (T?) -> ()) {
         var data: Data?
         switch T.self {
         case is [Event].Type:

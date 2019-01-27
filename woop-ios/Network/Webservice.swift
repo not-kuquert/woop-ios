@@ -9,11 +9,10 @@
 import Foundation
 
 struct Webservice: Service {
-    func get<T>(resource: Resource<T>, completion: @escaping (T?) -> ()) {
-        print(resource.self)
-        URLSession.shared.dataTask(with: resource.url) { (data, response, error) in
+    func load<T>(resource: Resource<T>, completion: @escaping (T?) -> ()) {
+        URLSession.shared.dataTask(with: resource.urlRequest) { data, _, _ in
             DispatchQueue.main.async {
-                completion(data != nil ? resource.parse(data!) : nil)
+                completion(data.flatMap(resource.parse))
             }
             }.resume()
     }

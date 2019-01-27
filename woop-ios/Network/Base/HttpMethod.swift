@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum HttpMethod {
+enum HttpMethod<Body> {
     case get
-    case post(Data)
+    case post(Body)
 }
 
 extension HttpMethod { //TODO: Maybe remove the extensions and add directelly to the struct

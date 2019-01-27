@@ -31,8 +31,8 @@
 		64766C1721FD0329007AF7E4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C1621FD0329007AF7E4 /* Extensions.swift */; };
 		64766C1921FD06DB007AF7E4 /* EventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64766C1821FD06DB007AF7E4 /* EventView.xib */; };
 		64766C1B21FD06E6007AF7E4 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C1A21FD06E6007AF7E4 /* EventView.swift */; };
+		64766C1D21FD66D5007AF7E4 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C1C21FD66D5007AF7E4 /* EmptyResponse.swift */; };
 		64A6B46B21FAC3A50075C260 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6B46A21FAC3A50075C260 /* HttpMethod.swift */; };
-		64A6B46D21FAC3E40075C260 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6B46C21FAC3E40075C260 /* ApiRouter.swift */; };
 		64A6B48B21FAF1B20075C260 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A6B47221FAEF250075C260 /* Kingfisher.framework */; };
 		64A6B48C21FAF1B20075C260 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A6B47321FAEF250075C260 /* Rswift.framework */; };
 		64A6B48E21FAF5010075C260 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6B48D21FAF5010075C260 /* R.generated.swift */; };
@@ -88,8 +88,8 @@
 		64766C1621FD0329007AF7E4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		64766C1821FD06DB007AF7E4 /* EventView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventView.xib; sourceTree = "<group>"; };
 		64766C1A21FD06E6007AF7E4 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		64766C1C21FD66D5007AF7E4 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 		64A6B46A21FAC3A50075C260 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
-		64A6B46C21FAC3E40075C260 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		64A6B47221FAEF250075C260 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		64A6B47321FAEF250075C260 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		64A6B48D21FAF5010075C260 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -186,7 +186,6 @@
 			children = (
 				64A6B46E21FAC5700075C260 /* Base */,
 				646EAA2A21F940B0001DA03D /* MockData */,
-				64A6B46C21FAC3E40075C260 /* ApiRouter.swift */,
 				646EAA2621F9407F001DA03D /* Webservice.swift */,
 				646EAA3121F94170001DA03D /* Mockservice.swift */,
 				646EAA3A21F94621001DA03D /* EventsFacade.swift */,
@@ -207,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				646EAA3621F9433F001DA03D /* Cupon.swift */,
+				64766C1C21FD66D5007AF7E4 /* EmptyResponse.swift */,
 				646EAA3821F94348001DA03D /* Event.swift */,
 				646EAA3421F94335001DA03D /* Person.swift */,
 				646EAA3C21F95740001DA03D /* Checkin.swift */,
@@ -453,11 +453,11 @@
 				64766C1221FCF3AA007AF7E4 /* DateView.swift in Sources */,
 				646EAA3D21F95740001DA03D /* Checkin.swift in Sources */,
 				64766C1721FD0329007AF7E4 /* Extensions.swift in Sources */,
+				64766C1D21FD66D5007AF7E4 /* EmptyResponse.swift in Sources */,
 				64766C1421FCF403007AF7E4 /* NibLoadable.swift in Sources */,
 				64A6B46B21FAC3A50075C260 /* HttpMethod.swift in Sources */,
 				646EAA2921F94092001DA03D /* Resource.swift in Sources */,
 				646EAA3721F9433F001DA03D /* Cupon.swift in Sources */,
-				64A6B46D21FAC3E40075C260 /* ApiRouter.swift in Sources */,
 				646EAA3021F94141001DA03D /* Service.swift in Sources */,
 				646EAA3521F94335001DA03D /* Person.swift in Sources */,
 				646EA9F821F93F8D001DA03D /* AppDelegate.swift in Sources */,

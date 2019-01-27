@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     }
     
     private func loadEvents() {
-        EventsFacade.shared.events { [weak self] (events) in
+        EventsFacade.events() { [weak self] events in
             self?.events = events ?? [] // TODO: Should handle error here
             self?.tableView.reloadData()
         }

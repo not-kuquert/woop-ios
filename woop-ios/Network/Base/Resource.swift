@@ -8,28 +8,35 @@
 
 import Foundation
 
-struct Resource<T> {
-    let url: URL
-    let method: HttpMethod
-    let parse: (Data) -> T?
+struct Resource<A> {
+    var urlRequest: URLRequest
+    let parse: (Data) -> A?
 }
 
-extension Resource where T: Decodable {
-    init(url: URL, method: HttpMethod = .get) {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .millisecondsSince1970
-        
-        self.url = url
-        self.method  = method
+extension Resource where A: Decodable {
+    init(get url: URL) {
+        urlRequest = URLRequest(url: url)
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         self.parse = { data in
-            //TODO handle decode errors here.
-            do {
-                return try decoder.decode(T.self, from: data)
-            } catch let error {
-                print(error)
-                return nil
-            }
-            
+            try? JSONDecoder().decode(A.self, from: data)
+        }
+    }
+
+    init<Body: Encodable>(url: URL, method: HttpMethod<Body> = .get) {
+        urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = method.method
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        switch method {
+        case .get: ()
+        case .post(let body):
+            self.urlRequest.httpBody = try! JSONEncoder().encode(body)
+        }
+        
+        self.parse = { data in
+            try? JSONDecoder().decode(A.self, from: data)
         }
     }
 }
