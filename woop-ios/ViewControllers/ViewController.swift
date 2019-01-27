@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     }
 
     private func loadEvents() {
-        EventsFacade.events { [weak self] events, error in
+        EventsFacade.shared.events { [weak self] events, error in
             guard error == nil else {
                 // TODO: Decide how we should present errors for the user
                 print(error)

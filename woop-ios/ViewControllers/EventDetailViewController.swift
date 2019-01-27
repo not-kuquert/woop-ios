@@ -102,7 +102,7 @@ class EventDetailViewController: UIViewController {
                 return
             }
 
-            EventsFacade.checkIn(checkin: Checkin(eventId: self.event.id, name: name, email: email),
+            EventsFacade.shared.checkIn(checkin: Checkin(eventId: self.event.id, name: name, email: email),
                                  completion: { response, _ in
                                      switch response?.code {
                                      case .some("200"):

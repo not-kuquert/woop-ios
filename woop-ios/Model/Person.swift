@@ -9,10 +9,10 @@
 import Foundation
 
 struct Person: Codable {
-    var eventId: String
     var id: String
+    var eventId: String
     var name: String
-    private var picture: String
+    var picture: String
     
     var pictureUrl: URL {
         return URL(string: picture.replacingOccurrences(of: "http://", with: "https://"))!
