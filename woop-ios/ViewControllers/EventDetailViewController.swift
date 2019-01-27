@@ -36,8 +36,7 @@ class EventDetailViewController: UIViewController {
     }
     
     private func populatAddessLabel(event: Event) {
-        //TODO: get locatio from address when we have it
-        let location = CLLocation(latitude: -30.0392981, longitude: -51.2146267)
+        let location = CLLocation(latitude: event.latitude, longitude: event.longitude)
         CLGeocoder().reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
             guard let placemark = placemarks?.first else { return }
             
