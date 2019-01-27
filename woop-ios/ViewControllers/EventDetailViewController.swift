@@ -32,7 +32,7 @@ class EventDetailViewController: UIViewController {
         eventView.event = event
         populatAddessLabel(event: event)
         
-        checkinButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
+        checkinButton.addTarget(self, action: #selector(showInputAlert), for: .touchUpInside)
     }
     
     private func populatAddessLabel(event: Event) {
@@ -49,12 +49,35 @@ class EventDetailViewController: UIViewController {
         }
     }
     
-    @objc private func showAlert() {
+    @objc private func showInputAlert() {
         //TODO: Extarct string to strings file
         let alert = UIAlertController(title: "Precisamos de algumas informanções",
                                       message: "Para manter você informado sobre o evento e saber quem você é, precisamos de algumas informações",
                                       preferredStyle: .alert)
         
+        addActions(on: alert)
+        
+        self.present(alert, animated: true)
+    }
+    
+    private func showRepeatInputAlert() {
+        let alert = UIAlertController(title: "Oops",
+                                      message: "Suas informações são inválidas, tente novamente",
+                                      preferredStyle: .alert)
+        addActions(on: alert)
+        self.present(alert, animated: true)
+    }
+    
+    private func showSuccessAlert() {
+        let alert = UIAlertController(title: "Deu tudo certo, te esperamos no evento",
+                                      message: nil,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+
+    
+    private func addActions(on alert: UIAlertController) {
         alert.addAction(UIAlertAction(title: "Cancelar", style: .default, handler: nil))
         
         alert.addTextField(configurationHandler: { textField in
@@ -69,14 +92,23 @@ class EventDetailViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Check-in", style: .default, handler: { action in
             if let name = alert.textFields?.get(at: 0)?.text,
                 let email = alert.textFields?.get(at: 1)?.text {
-                //TODO: validate info, if not valid show invalid info alert with prefilled information
-                //self.present(alert, animated: true)
-                print("Your name: \(name)")
-                print("Your email: \(email)")
+                
+                if (email.count > 0 && email.contains("@") && name.count > 0) {
+                    EventsFacade.checkIn(checkin: Checkin(eventId: "1", name: name, email: email),
+                                         completion: { (response) in
+                                            switch response?.code {
+                                            case .some("200"):
+                                                self.showSuccessAlert()
+                                                self.checkinButton.isEnabled = false
+                                            default:
+                                                print("deu ruim")
+                                            }
+                    })
+                } else {
+                    self.showRepeatInputAlert()
+                }
             }
-            
         }))
         
-        self.present(alert, animated: true)
     }
 }
