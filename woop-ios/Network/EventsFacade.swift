@@ -19,17 +19,17 @@ struct EventsFacade {
     
     private static let service: Service = EventsFacade.loadLocally ? Mockservice() : Webservice()
     
-    static func events(completion: @escaping ([Event]?) -> ()) {
+    static func events(completion: @escaping ([Event]?, Error?) -> ()) {
         let resource = Resource<[Event]>(get: EventsFacade.baseUrlWith(path: "events"))
         EventsFacade.service.load(resource: resource, completion: completion)
     }
     
-    static func event(id: String, completion: @escaping (Event?) -> ()) {
+    static func event(id: String, completion: @escaping (Event?, Error?) -> ()) {
         let resource = Resource<Event>(get: EventsFacade.baseUrlWith(path: "events/\(id)"))
         EventsFacade.service.load(resource: resource, completion: completion)
     }
     
-    static func checkIn(checkin: Checkin, completion: @escaping (EmptyResponse?) -> ()) {
+    static func checkIn(checkin: Checkin, completion: @escaping (EmptyResponse?, Error?) -> ()) {
         let resource = Resource<EmptyResponse>(url: EventsFacade.baseUrlWith(path: "checkin"),
                                                method: .post(checkin))
         EventsFacade.service.load(resource: resource, completion: completion)

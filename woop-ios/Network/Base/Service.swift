@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Service {
-    func load<T>(resource: Resource<T>, completion: @escaping (T?) -> ())
+    func load<T>(resource: Resource<T>, completion: @escaping (T?, Error?) -> ())
 }

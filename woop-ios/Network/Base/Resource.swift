@@ -10,7 +10,7 @@ import Foundation
 
 struct Resource<A> {
     var urlRequest: URLRequest
-    let parse: (Data) -> A?
+    let parse: (Data) -> (A?, Error?)
 }
 
 extension Resource where A: Decodable {
@@ -19,7 +19,11 @@ extension Resource where A: Decodable {
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         self.parse = { data in
-            try? JSONDecoder().decode(A.self, from: data)
+            do {
+                return (try JSONDecoder().decode(A.self, from: data), nil)
+            } catch let error {
+                return (nil, error)
+            }
         }
     }
 
@@ -36,7 +40,11 @@ extension Resource where A: Decodable {
         }
         
         self.parse = { data in
-            try? JSONDecoder().decode(A.self, from: data)
+            do {
+                return (try JSONDecoder().decode(A.self, from: data), nil)
+            } catch let error {
+                return (nil, error)
+            }
         }
     }
 }

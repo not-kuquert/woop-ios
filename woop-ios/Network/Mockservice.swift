@@ -8,9 +8,12 @@
 
 import Foundation
 
+enum MyLittleError: Error {
+    case noData
+}
 
 struct Mockservice: Service {
-    func load<T>(resource: Resource<T>, completion: @escaping (T?) -> ()) {
+    func load<T>(resource: Resource<T>, completion: @escaping (T?, Error?) -> ()) {
         var data: Data?
         switch T.self {
         case is [Event].Type:
@@ -22,8 +25,12 @@ struct Mockservice: Service {
         default:
             assertionFailure("No mock data available")
         }
-        
-        completion(data != nil ? resource.parse(data!) : nil)
+        if let data = data {
+            let result = resource.parse(data)
+            completion(result.0, result.1)
+        } else {
+            completion(nil, MyLittleError.noData)
+        }
     }
     
     private func dataForFile(name: String) -> Data? {

@@ -103,7 +103,7 @@ class EventDetailViewController: UIViewController {
             }
             
             EventsFacade.checkIn(checkin: Checkin(eventId: self.event.id, name: name, email: email),
-                                 completion: { (response) in
+                                 completion: { (response, error) in
                                     switch response?.code {
                                     case .some("200"):
                                         self.showInfoAlert(title: R.string.localizable.checkin_success_title())
