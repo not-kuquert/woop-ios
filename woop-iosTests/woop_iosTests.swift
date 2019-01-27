@@ -47,6 +47,27 @@ class woop_iosTests: XCTestCase {
         XCTAssertEqual(event.people.first?.pictureUrl.scheme, "https")
     }
     
+    func testPriceFormatter() {
+        let eventView = EventView()
+        eventView.event = event
+        XCTAssertEqual(eventView.priceLabel.text, "R$ 29,99")
+        
+        var newEvent = event
+        newEvent?.price = 100.0
+        eventView.event = newEvent
+        XCTAssertEqual(eventView.priceLabel.text, "R$ 100,00")
+        
+        var newEvent2 = event
+        newEvent2?.price = 10.05
+        eventView.event = newEvent2
+        XCTAssertEqual(eventView.priceLabel.text, "R$ 10,05")
+        
+        var newEvent3 = event
+        newEvent3?.price = 0
+        eventView.event = newEvent3
+        XCTAssertEqual(eventView.priceLabel.text, "GRÁTIS")
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         measure {

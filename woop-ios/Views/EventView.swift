@@ -32,7 +32,13 @@ import UIKit
                                              placeholder: R.image.placeholder())
             
             if let price = event?.price, price > 0 {
-                priceLabel.text = R.string.localizable.price(String(format: "%.2f", price))
+                let formattedPrice = String(format: "%.2f",
+                                            locale: Locale(identifier: "pt_BR"),
+                                            price)
+                
+                priceLabel.text = R.string.localizable.price(formattedPrice)
+            } else {
+                priceLabel.text = R.string.localizable.price_free()
             }
         }
     }
