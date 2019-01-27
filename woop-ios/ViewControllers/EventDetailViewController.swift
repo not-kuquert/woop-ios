@@ -33,6 +33,7 @@ class EventDetailViewController: UIViewController {
         populatAddessLabel(event: event)
         
         checkinButton.addTarget(self, action: #selector(showCheckinAlert), for: .touchUpInside)
+        checkinButton.layer.cornerRadius = 10
     }
     
     private func populatAddessLabel(event: Event) {
