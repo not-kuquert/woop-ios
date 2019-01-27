@@ -34,7 +34,11 @@ class woop_iosTests: XCTestCase {
         XCTAssertEqual(dateView.monthLabel.text, "MAR")
         XCTAssertEqual(dateView.yearLabel.text, "1995")
     }
-
+    
+    func testDateParsingStrategy() {
+        XCTAssertEqual(event.date, Date(timeIntervalSince1970: 1534784400000 / 1000 ))
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         measure {
