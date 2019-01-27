@@ -167,6 +167,7 @@
 				64A6B49021FAFACE0075C260 /* Views */,
 				64A6B48F21FAFA720075C260 /* ViewControllers */,
 				64766C1521FD030A007AF7E4 /* Utils */,
+				646EAA2A21F940B0001DA03D /* MockData */,
 				646EA9F721F93F8D001DA03D /* AppDelegate.swift */,
 				646EA9FB21F93F8D001DA03D /* Main.storyboard */,
 				646EA9FE21F93F8E001DA03D /* Assets.xcassets */,
@@ -200,10 +201,9 @@
 			isa = PBXGroup;
 			children = (
 				64A6B46E21FAC5700075C260 /* Base */,
-				646EAA2A21F940B0001DA03D /* MockData */,
-				646EAA2621F9407F001DA03D /* Webservice.swift */,
-				646EAA3121F94170001DA03D /* Mockservice.swift */,
 				646EAA3A21F94621001DA03D /* EventsFacade.swift */,
+				646EAA3121F94170001DA03D /* Mockservice.swift */,
+				646EAA2621F9407F001DA03D /* Webservice.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -220,11 +220,11 @@
 		646EAA3321F941B7001DA03D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				646EAA3C21F95740001DA03D /* Checkin.swift */,
 				646EAA3621F9433F001DA03D /* Cupon.swift */,
 				64766C1C21FD66D5007AF7E4 /* EmptyResponse.swift */,
 				646EAA3821F94348001DA03D /* Event.swift */,
 				646EAA3421F94335001DA03D /* Person.swift */,
-				646EAA3C21F95740001DA03D /* Checkin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,8 +232,8 @@
 		64766C1521FD030A007AF7E4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				64766C1321FCF403007AF7E4 /* NibLoadable.swift */,
 				64766C1621FD0329007AF7E4 /* Extensions.swift */,
+				64766C1321FCF403007AF7E4 /* NibLoadable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -243,8 +243,8 @@
 			children = (
 				64766C2521FE53F7007AF7E4 /* Roundable.swift */,
 				64766C2921FE6487007AF7E4 /* RoundBorderedButton.swift */,
-				64766C2B21FE648E007AF7E4 /* RoundBorderedView.swift */,
 				64766C2D21FE6496007AF7E4 /* RoundBorderedImageView.swift */,
+				64766C2B21FE648E007AF7E4 /* RoundBorderedView.swift */,
 			);
 			path = RoundBordered;
 			sourceTree = "<group>";
@@ -280,14 +280,14 @@
 		64A6B49021FAFACE0075C260 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				64766C2F21FE64F6007AF7E4 /* RoundBordered */,
 				64766C1121FCF3AA007AF7E4 /* DateView.swift */,
 				64766C0D21FCF201007AF7E4 /* DateView.xib */,
+				64A6B49121FAFAF70075C260 /* EventTableViewCell.swift */,
 				64766C1A21FD06E6007AF7E4 /* EventView.swift */,
 				64766C1821FD06DB007AF7E4 /* EventView.xib */,
 				64766C2321FDF7FF007AF7E4 /* PeopleView.swift */,
 				64766C2121FDF7F0007AF7E4 /* PeopleView.xib */,
-				64A6B49121FAFAF70075C260 /* EventTableViewCell.swift */,
+				64766C2F21FE64F6007AF7E4 /* RoundBordered */,
 			);
 			path = Views;
 			sourceTree = "<group>";
