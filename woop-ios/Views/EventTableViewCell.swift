@@ -21,7 +21,6 @@ class EventTableViewCell: UITableViewCell {
         super.draw(rect)
     }
 
-    // TODO: Add contrasted text color depending on image avrage color
     func render(event: Event) {
         eventView.event = event
     }

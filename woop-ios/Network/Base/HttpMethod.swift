@@ -13,7 +13,7 @@ enum HttpMethod<Body> {
     case post(Body)
 }
 
-extension HttpMethod { //TODO: Maybe remove the extensions and add directelly to the struct
+extension HttpMethod {
     var method: String {
         switch self {
         case .get:
