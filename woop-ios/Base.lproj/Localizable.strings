@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  woop-ios
+
+  Created by Marcus Vinicius Kuquert on 1/27/19.
+  Copyright © 2019 kuquert. All rights reserved.
+*/
+
+"checkin_alert_title" = "Precisamos de algumas informanções";
+"checkin_alert_message" = "Para manter você informado sobre o evento e saber quem você é, precisamos de algumas informações";
+"input_name_placeholder" = "Nome";
+"input_email_placeholder" = "Email";
+
+"checkin_success_title" = "Deu tudo certo, te esperamos no evento";
+"checkin_failure_title" = "Ocorreu um erro, tente novamente";
+"checkin_invalid_title" = "Oops";
+"checkin_invalid_message" = "Suas informações são inválidas";
+
+"alert_default_button" = "Ok";
+"alert_cancel_button" = "Cancelar";
+"alert_checkin_button" = "CHECK-IN";
+
+"address" = "%@, %@ - %@";

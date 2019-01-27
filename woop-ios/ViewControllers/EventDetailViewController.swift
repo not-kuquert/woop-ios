@@ -32,81 +32,87 @@ class EventDetailViewController: UIViewController {
         eventView.event = event
         populatAddessLabel(event: event)
         
-        checkinButton.addTarget(self, action: #selector(showInputAlert), for: .touchUpInside)
+        checkinButton.addTarget(self, action: #selector(showCheckinAlert), for: .touchUpInside)
     }
     
     private func populatAddessLabel(event: Event) {
         let location = CLLocation(latitude: event.latitude, longitude: event.longitude)
         CLGeocoder().reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
-            guard let placemark = placemarks?.first else { return }
-            
-            if let address = placemark.name,
+            guard let placemark = placemarks?.first,
+                let address = placemark.name,
                 let city = placemark.locality,
-                let neighborhood = placemark.subLocality {
-                self?.addressLabel.text = "\(address), \(neighborhood) - \(city)"
-            }
+                let neighborhood = placemark.subLocality else { return }
+            
+            self?.addressLabel.text = R.string.localizable.address(address, neighborhood, city)
         }
     }
     
-    @objc private func showInputAlert() {
-        //TODO: Extarct string to strings file
-        let alert = UIAlertController(title: "Precisamos de algumas informanções",
-                                      message: "Para manter você informado sobre o evento e saber quem você é, precisamos de algumas informações",
-                                      preferredStyle: .alert)
-        
-        addActions(on: alert)
-        
-        self.present(alert, animated: true)
-    }
-    
-    private func showRepeatInputAlert() {
-        let alert = UIAlertController(title: "Oops",
-                                      message: "Suas informações são inválidas, tente novamente",
+    @objc private func showCheckinAlert() {
+        let alert = UIAlertController(title: R.string.localizable.checkin_alert_title(),
+                                      message: R.string.localizable.checkin_alert_message(),
                                       preferredStyle: .alert)
         addActions(on: alert)
         self.present(alert, animated: true)
     }
     
-    private func showSuccessAlert() {
-        let alert = UIAlertController(title: "Deu tudo certo, te esperamos no evento",
+    private func showInvalidCheckinAlert() {
+        let alert = UIAlertController(title: R.string.localizable.checkin_invalid_title(),
+                                      message: R.string.localizable.checkin_invalid_message(),
+                                      preferredStyle: .alert)
+        addActions(on: alert)
+        self.present(alert, animated: true)
+    }
+    
+    private func showInfoAlert(title: String) {
+        let alert = UIAlertController(title: title,
                                       message: nil,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: R.string.localizable.alert_default_button(),
+                                      style: .default,
+                                      handler: nil))
         present(alert, animated: true)
     }
-
     
     private func addActions(on alert: UIAlertController) {
-        alert.addAction(UIAlertAction(title: "Cancelar", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: R.string.localizable.alert_cancel_button(),
+                                      style: .default,
+                                      handler: nil))
         
         alert.addTextField(configurationHandler: { textField in
-            textField.placeholder = "Nome"
+            textField.placeholder = R.string.localizable.input_name_placeholder()
+            textField.autocorrectionType = .no
         })
         
         alert.addTextField(configurationHandler: { textField in
-            textField.placeholder = "E-mail"
+            textField.placeholder = R.string.localizable.input_email_placeholder()
             textField.keyboardType = .emailAddress
         })
         
-        alert.addAction(UIAlertAction(title: "Check-in", style: .default, handler: { action in
-            if let name = alert.textFields?.get(at: 0)?.text,
-                let email = alert.textFields?.get(at: 1)?.text {
-                
-                if (email.count > 0 && email.contains("@") && name.count > 0) {
-                    EventsFacade.checkIn(checkin: Checkin(eventId: "1", name: name, email: email),
-                                         completion: { (response) in
-                                            switch response?.code {
-                                            case .some("200"):
-                                                self.showSuccessAlert()
-                                                self.checkinButton.isEnabled = false
-                                            default:
-                                                print("deu ruim")
-                                            }
-                    })
-                } else {
-                    self.showRepeatInputAlert()
-                }
+        // TODO: Deal with possible memory leaks here due to selfs
+        alert.addAction(UIAlertAction(title: R.string.localizable.alert_checkin_button(), style: .default, handler: { action in
+            
+            func isValid(name: String, email: String) -> Bool {
+                return (email.count > 0 && email.contains("@") && name.count > 0)
             }
+            
+            guard let name = alert.textFields?.get(at: 0)?.text,
+                let email = alert.textFields?.get(at: 1)?.text,
+                isValid(name: name, email: email) else {
+                self.showInvalidCheckinAlert()
+                return
+            }
+            
+            EventsFacade.checkIn(checkin: Checkin(eventId: self.event.id, name: name, email: email),
+                                 completion: { (response) in
+                                    switch response?.code {
+                                    case .some("200"):
+                                        self.showInfoAlert(title: R.string.localizable.checkin_success_title())
+                                        self.checkinButton.isEnabled = false
+                                    default:
+                                        self.showInfoAlert(title: R.string.localizable.checkin_failure_title())
+                                        self.checkinButton.isEnabled = true
+                                    }
+            })
         }))
         
     }
