@@ -9,14 +9,41 @@
 import Foundation
 
 struct Event: Codable {
-    var cupons: [Cupon]
-    var date: Date // "date": 1534784400000
-    var description: String
     var id: String
-    var image: String
-//    var latitude: Double //TODO: Create custom decoder that accept String or Double
-//    var longitude: Double //TODO: Create custom decoder that accept String or Double
-    var people: [Person]
-    var price: Double
     var title: String
+    var price: Double
+    var image: String
+    var latitude: Double
+    var longitude: Double
+    var description: String
+    var date: Date
+    var people: [Person]
+    var cupons: [Cupon]
+}
+
+extension Event {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        id = try container.decode(String.self, forKey: .id)
+        title = try container.decode(String.self, forKey: .title)
+        price = try container.decode(Double.self, forKey: .price)
+        image = try container.decode(String.self, forKey: .image)
+        description = try container.decode(String.self, forKey: .description)
+        date = try container.decode(Date.self, forKey: .date)
+        people = try container.decode([Person].self, forKey: .people)
+        cupons = try container.decode([Cupon].self, forKey: .cupons)
+
+        if let stringValue = try? container.decode(String.self, forKey: .latitude) {
+            latitude = Double(stringValue) ?? 0
+        } else {
+            latitude = try container.decode(Double.self, forKey: .latitude)
+        }
+
+        if let stringValue = try? container.decode(String.self, forKey: .longitude) {
+            longitude = Double(stringValue) ?? 0 // TODO: Remove this fallback
+        } else {
+            longitude = try container.decode(Double.self, forKey: .longitude)
+        }
+    }
 }
