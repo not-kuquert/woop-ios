@@ -9,6 +9,7 @@
 import UIKit
 
 @IBDesignable final class DateView: UIView, NibLoadable {
+    
     @IBOutlet var dayLabel: UILabel!
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var yearLabel: UILabel!
@@ -38,5 +39,11 @@ import UIKit
 
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        layer.cornerRadius = 10
+        clipsToBounds = true
     }
 }

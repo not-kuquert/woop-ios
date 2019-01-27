@@ -37,7 +37,6 @@
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAs-Ir-rrt" customClass="DateView" customModule="woop_ios" customModuleProvider="target">
                             <rect key="frame" x="287" y="16" width="72" height="75"/>
-                            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.39683186349999999" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="75" id="CFA-qq-l6O"/>
                                 <constraint firstAttribute="width" constant="72" id="SCA-qq-XVU"/>
