@@ -9,20 +9,19 @@
 import UIKit
 
 class EventTableViewCell: UITableViewCell {
-    
     static let highlightFactor: CGFloat = 0.96
 
-    @IBOutlet weak var eventView: EventView!
-    
+    @IBOutlet var eventView: EventView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+
     override func draw(_ rect: CGRect) {
         super.draw(rect)
     }
-    
-    //TODO: Add contrasted text color depending on image avrage color
+
+    // TODO: Add contrasted text color depending on image avrage color
     func render(event: Event) {
         eventView.event = event
     }
@@ -33,20 +32,20 @@ extension EventTableViewCell {
         super.touchesBegan(touches, with: event)
         animate(isHighlighted: true)
     }
-    
+
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         animate(isHighlighted: false)
     }
-    
+
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
         animate(isHighlighted: false)
     }
-    
+
     private func animate(isHighlighted: Bool, completion: ((Bool) -> Void)? = nil) {
         let animationBlock: () -> Void
-        
+
         if isHighlighted {
             animationBlock = { [weak self] in
                 self?.transform = .init(scaleX: EventTableViewCell.highlightFactor,
@@ -57,7 +56,7 @@ extension EventTableViewCell {
                 self?.transform = .identity
             }
         }
-        
+
         UIView.animate(withDuration: 0.5,
                        delay: 0,
                        usingSpringWithDamping: 1,

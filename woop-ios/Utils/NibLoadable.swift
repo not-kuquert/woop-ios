@@ -20,7 +20,7 @@ extension NibLoadable {
                           owner: self,
                           options: nil)?
             .first as! UIView
-        self.addSubview(contentView)
+        addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.edges(to: self)
         return contentView

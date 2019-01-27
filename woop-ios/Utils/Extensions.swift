@@ -10,26 +10,25 @@ import UIKit
 
 extension UIView {
     func edges(to view: UIView,
-               top: CGFloat=0,
-               left: CGFloat=0,
-               bottom: CGFloat=0,
-               right: CGFloat=0) {
-        
+               top: CGFloat = 0,
+               left: CGFloat = 0,
+               bottom: CGFloat = 0,
+               right: CGFloat = 0) {
         NSLayoutConstraint.activate([
             self.leftAnchor.constraint(equalTo: view.leftAnchor, constant: left),
             self.rightAnchor.constraint(equalTo: view.rightAnchor, constant: right),
             self.topAnchor.constraint(equalTo: view.topAnchor, constant: top),
-            self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottom)
-            ])
+            self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottom),
+        ])
     }
-    
+
     private func baseShadow() {
         layer.shadowColor = UIColor.black.cgColor
         layer.rasterizationScale = UIScreen.main.scale
         layer.shouldRasterize = true
         layer.masksToBounds = false
     }
-    
+
     func cellShadow(cornerRadius: CGFloat = 8) {
         baseShadow()
         layer.cornerRadius = cornerRadius
@@ -39,7 +38,7 @@ extension UIView {
         layer.shadowPath = UIBezierPath(roundedRect: bounds,
                                         cornerRadius: cornerRadius).cgPath
     }
-    
+
     func headerShadow() {
         baseShadow()
         layer.shadowOpacity = 0.2
@@ -49,14 +48,12 @@ extension UIView {
     }
 }
 
-
 extension DateFormatter {
     convenience init(dateFormat: String) {
         self.init()
         self.dateFormat = dateFormat
     }
 }
-
 
 extension Collection {
     func get(at index: Index) -> Element? {

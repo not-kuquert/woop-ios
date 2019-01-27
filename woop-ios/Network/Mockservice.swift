@@ -13,15 +13,15 @@ enum MyLittleError: Error {
 }
 
 struct Mockservice: Service {
-    func load<T>(resource: Resource<T>, completion: @escaping (T?, Error?) -> ()) {
+    func load<T>(resource: Resource<T>, completion: @escaping (T?, Error?) -> Void) {
         var data: Data?
         switch T.self {
         case is [Event].Type:
             data = dataForFile(name: "events")
-            
+
         case is Event.Type:
             data = dataForFile(name: "event1")
-            
+
         default:
             assertionFailure("No mock data available")
         }
@@ -32,7 +32,7 @@ struct Mockservice: Service {
             completion(nil, MyLittleError.noData)
         }
     }
-    
+
     private func dataForFile(name: String) -> Data? {
         let path = Bundle.main.path(forResource: name, ofType: "json")!
         let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)

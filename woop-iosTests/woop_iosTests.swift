@@ -6,11 +6,10 @@
 //  Copyright © 2019 kuquert. All rights reserved.
 //
 
-import XCTest
 @testable import woop_ios
+import XCTest
 
 class woop_iosTests: XCTestCase {
-
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -26,9 +25,8 @@ class woop_iosTests: XCTestCase {
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
-
 }
