@@ -12,14 +12,14 @@ struct Event: Codable {
     var id: String
     var title: String
     var price: Double
-    private var image: String
+    var image: String
     var latitude: Double
     var longitude: Double
     var description: String
     var date: Date
     var people: [Person]
     var cupons: [Cupon]
-    
+
     var imageUrl: URL {
         return URL(string: image.replacingOccurrences(of: "http://", with: "https://"))!
     }
@@ -39,7 +39,7 @@ extension Event {
         cupons = try container.decode([Cupon].self, forKey: .cupons)
 
         if let stringValue = try? container.decode(String.self, forKey: .latitude),
-            let doubleValue = Double(stringValue){
+            let doubleValue = Double(stringValue) {
             latitude = doubleValue
         } else {
             latitude = try container.decode(Double.self, forKey: .latitude)
