@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum Enviroment {
-    case local, development, production
-}
-
 struct EventsFacade {
     private let service: Service
 
