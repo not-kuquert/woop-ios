@@ -25,12 +25,12 @@ class ViewController: UIViewController {
 
     private func loadEvents() {
         EventsFacade.shared.events { [weak self] events, error in
-            guard error == nil else {
+            guard error == nil, events != nil else {
                 self?.errorView.show()
                 return
             }
 
-            self?.events = events ?? [] // TODO: Should handle error here
+            self?.events = events!
             self?.tableView.reloadData()
         }
     }
