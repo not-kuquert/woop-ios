@@ -24,3 +24,6 @@
 
 "price" = "R$ %@";
 "price_free" = "GRÁTIS";
+
+"error_title" = "Um erro ocorreu";
+"error_message" = "Parece que tivemos um problema com a resposta do servidor";

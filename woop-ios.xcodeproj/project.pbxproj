@@ -39,6 +39,8 @@
 		64766C2A21FE6487007AF7E4 /* RoundBorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C2921FE6487007AF7E4 /* RoundBorderedButton.swift */; };
 		64766C2C21FE648E007AF7E4 /* RoundBorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C2B21FE648E007AF7E4 /* RoundBorderedView.swift */; };
 		64766C2E21FE6496007AF7E4 /* RoundBorderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C2D21FE6496007AF7E4 /* RoundBorderedImageView.swift */; };
+		64766C3121FE6B81007AF7E4 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64766C3021FE6B81007AF7E4 /* ErrorView.swift */; };
+		64766C3321FE6BDA007AF7E4 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64766C3221FE6BDA007AF7E4 /* ErrorView.xib */; };
 		64A6B46B21FAC3A50075C260 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6B46A21FAC3A50075C260 /* HttpMethod.swift */; };
 		64A6B48B21FAF1B20075C260 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A6B47221FAEF250075C260 /* Kingfisher.framework */; };
 		64A6B48C21FAF1B20075C260 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A6B47321FAEF250075C260 /* Rswift.framework */; };
@@ -103,6 +105,8 @@
 		64766C2921FE6487007AF7E4 /* RoundBorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBorderedButton.swift; sourceTree = "<group>"; };
 		64766C2B21FE648E007AF7E4 /* RoundBorderedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBorderedView.swift; sourceTree = "<group>"; };
 		64766C2D21FE6496007AF7E4 /* RoundBorderedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBorderedImageView.swift; sourceTree = "<group>"; };
+		64766C3021FE6B81007AF7E4 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		64766C3221FE6BDA007AF7E4 /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 		64A6B46A21FAC3A50075C260 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		64A6B47221FAEF250075C260 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		64A6B47321FAEF250075C260 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 		64A6B49021FAFACE0075C260 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				64766C3021FE6B81007AF7E4 /* ErrorView.swift */,
+				64766C3221FE6BDA007AF7E4 /* ErrorView.xib */,
 				64766C1121FCF3AA007AF7E4 /* DateView.swift */,
 				64766C0D21FCF201007AF7E4 /* DateView.xib */,
 				64A6B49121FAFAF70075C260 /* EventTableViewCell.swift */,
@@ -407,6 +413,7 @@
 				64766C2021FD728C007AF7E4 /* Localizable.strings in Resources */,
 				64766C0E21FCF201007AF7E4 /* DateView.xib in Resources */,
 				646EAA2E21F94101001DA03D /* event1.json in Resources */,
+				64766C3321FE6BDA007AF7E4 /* ErrorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +494,7 @@
 				646EAA3D21F95740001DA03D /* Checkin.swift in Sources */,
 				64766C1721FD0329007AF7E4 /* Extensions.swift in Sources */,
 				64766C1D21FD66D5007AF7E4 /* EmptyResponse.swift in Sources */,
+				64766C3121FE6B81007AF7E4 /* ErrorView.swift in Sources */,
 				64766C1421FCF403007AF7E4 /* NibLoadable.swift in Sources */,
 				64A6B46B21FAC3A50075C260 /* HttpMethod.swift in Sources */,
 				646EAA2921F94092001DA03D /* Resource.swift in Sources */,

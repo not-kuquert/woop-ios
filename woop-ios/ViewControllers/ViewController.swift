@@ -9,50 +9,24 @@
 import Kingfisher
 import UIKit
 
-extension UITableView {
-    func setEmptyMessage(_ message: String) {
-        let messageLabel = UILabel(frame: CGRect(x: 0,
-                                                 y: 0,
-                                                 width: bounds.size.width,
-                                                 height: bounds.size.height))
-        messageLabel.text = message
-        messageLabel.textColor = .black
-        messageLabel.numberOfLines = 0
-        messageLabel.textAlignment = .center
-        messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
-        messageLabel.sizeToFit()
-
-        backgroundView = messageLabel
-    }
-
-    func removeEmptyMessage() {
-        backgroundView = nil
-    }
-}
-
 class ViewController: UIViewController {
+    
     @IBOutlet var tableView: UITableView!
 
     private var events: [Event] = []
-
+    private var errorView = ErrorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
+        errorView.delegate = self
+        tableView.backgroundView = errorView
         loadEvents()
-    }
-
-    private func configureTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.tableFooterView = UIView()
-        tableView.separatorStyle = .none
     }
 
     private func loadEvents() {
         EventsFacade.shared.events { [weak self] events, error in
             guard error == nil else {
-                // TODO: Decide how we should present errors for the user
-                print(error)
+                self?.errorView.show()
                 return
             }
 
@@ -68,12 +42,6 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection _: Int) -> Int {
-        if events.count == 0 {
-            tableView.setEmptyMessage("Nenhum evento para mostrar")
-        } else {
-            tableView.removeEmptyMessage()
-        }
-
         return events.count
     }
 
@@ -93,5 +61,20 @@ extension ViewController: UITableViewDelegate {
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigationController?.pushViewController(EventDetailViewController.newInstance(event: events[indexPath.row]),
                                                  animated: true)
+    }
+}
+
+extension ViewController: ErrorViewDelegate {
+    func errorViewDidRetry() {
+        errorView.hide()
+        loadEvents()
+    }
+    
+    func errorViewTitle() -> String {
+        return R.string.localizable.error_title()
+    }
+    
+    func errorViewMessage() -> String {
+        return R.string.localizable.error_message()
     }
 }

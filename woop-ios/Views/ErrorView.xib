@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ErrorView" customModule="woop_ios" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="34O-lZ-LxD" id="Vvg-fl-i53"/>
+                <outlet property="messageLabel" destination="R23-Wo-Pt6" id="bBp-PJ-oh5"/>
+                <outlet property="titleLabel" destination="D26-B6-SJ4" id="IMe-MQ-ypD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="472"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34O-lZ-LxD" userLabel="ContentView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="472"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ACA-w0-zMs">
+                            <rect key="frame" x="16" y="144.5" width="343" height="119.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D26-B6-SJ4">
+                                    <rect key="frame" x="148.5" y="0.0" width="46.5" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                    <color key="textColor" red="0.77647058820000003" green="0.086274509799999996" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R23-Wo-Pt6">
+                                    <rect key="frame" x="137" y="45" width="69" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3v-PF-F7c" customClass="RoundBorderedButton" customModule="woop_ios" customModuleProvider="target">
+                                    <rect key="frame" x="93.5" y="81.5" width="156" height="38"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="38" id="laK-ED-Bb5"/>
+                                    </constraints>
+                                    <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                    <state key="normal" title="Tentar novamente"/>
+                                    <connections>
+                                        <action selector="retryButtonTouched" destination="-1" eventType="touchUpInside" id="RnY-xg-2VB"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ACA-w0-zMs" secondAttribute="trailing" constant="16" id="CZA-2K-ZSk"/>
+                        <constraint firstItem="ACA-w0-zMs" firstAttribute="centerY" secondItem="34O-lZ-LxD" secondAttribute="centerY" constant="-32" id="Ptd-29-qkq"/>
+                        <constraint firstItem="ACA-w0-zMs" firstAttribute="leading" secondItem="34O-lZ-LxD" secondAttribute="leading" constant="16" id="Sc2-zr-nP6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="34O-lZ-LxD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7N5-pa-QYY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="34O-lZ-LxD" secondAttribute="trailing" id="9nP-m4-jcx"/>
+                <constraint firstItem="34O-lZ-LxD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="BHH-Xz-hN4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="34O-lZ-LxD" secondAttribute="bottom" id="fLT-H4-pyA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="138.40000000000001" y="39.580209895052477"/>
+        </view>
+    </objects>
+</document>
