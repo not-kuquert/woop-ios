@@ -15,33 +15,33 @@ protocol ErrorViewDelegate {
 }
 
 final class ErrorView: UIView, NibLoadable {
-    @IBOutlet weak var contentView: UIView!
-    
+    @IBOutlet var contentView: UIView!
+
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var messageLabel: UILabel!
 
     var delegate: ErrorViewDelegate?
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         fromNib()
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         fromNib()
     }
-    
+
     func show() {
         titleLabel.text = delegate?.errorViewTitle()
         messageLabel.text = delegate?.errorViewMessage()
         contentView.isHidden = false
     }
-    
+
     func hide() {
         contentView.isHidden = true
     }
-    
+
     @IBAction func retryButtonTouched() {
         delegate?.errorViewDidRetry()
     }

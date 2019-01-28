@@ -14,10 +14,10 @@ enum Enviroment {
 
 struct EventsFacade {
     private let service: Service
-    
+
     static let shared = EventsFacade(service: Webservice())
     static let sharedLocal = EventsFacade(service: Mockservice())
-    
+
     private static func baseUrlWith(path: String) -> URL {
         return URL(string: "https://5b840ba5db24a100142dcd8c.mockapi.io/api/")!.appendingPathComponent(path)
     }

@@ -13,7 +13,7 @@ struct Person: Codable {
     var eventId: String
     var name: String
     var picture: String
-    
+
     var pictureUrl: URL {
         return URL(string: picture.replacingOccurrences(of: "http://", with: "https://"))!
     }

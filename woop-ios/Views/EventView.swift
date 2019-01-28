@@ -10,16 +10,11 @@ import UIKit
 
 @IBDesignable
 final class EventView: UIView, NibLoadable {
-    
-    private var shadowBlur: CGFloat = 8
-    private var shadowOpacity: Float = 0.7
-    private var shadowColor: UIColor = UIColor.red
-
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var priceLabel: UILabel!
     @IBOutlet var dateView: DateView!
-    @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var peopleView: PeopleView!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var backgroundImageView: UIImageView!
 
     var event: Event? {
         didSet {
@@ -55,9 +50,9 @@ final class EventView: UIView, NibLoadable {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
 
-        layer.shadowOpacity = shadowOpacity
-        layer.shadowColor = shadowColor.cgColor
-        layer.shadowOffset = CGSize.zero
-        layer.shadowRadius = shadowBlur
+        layer.shadowOpacity = 0.7
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 8
     }
 }
