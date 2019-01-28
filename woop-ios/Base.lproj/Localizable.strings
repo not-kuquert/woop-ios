@@ -18,7 +18,7 @@
 
 "alert_default_button" = "Ok";
 "alert_cancel_button" = "Cancelar";
-"alert_checkin_button" = "CHECK-IN";
+"alert_checkin_button" = "Check-in";
 
 "address" = "%@, %@ - %@";
 

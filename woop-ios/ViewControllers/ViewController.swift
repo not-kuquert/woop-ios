@@ -10,12 +10,11 @@ import Kingfisher
 import UIKit
 
 class ViewController: UIViewController {
-    
     @IBOutlet var tableView: UITableView!
 
     private var events: [Event] = []
     private var errorView = ErrorView()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         errorView.delegate = self
@@ -59,8 +58,8 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(EventDetailViewController.newInstance(event: events[indexPath.row]),
-                                                 animated: true)
+        let eventDetailVC = EventDetailViewController.newInstance(event: events[indexPath.row])
+        navigationController?.pushViewController(eventDetailVC, animated: true)
     }
 }
 
@@ -69,11 +68,11 @@ extension ViewController: ErrorViewDelegate {
         errorView.hide()
         loadEvents()
     }
-    
+
     func errorViewTitle() -> String {
         return R.string.localizable.error_title()
     }
-    
+
     func errorViewMessage() -> String {
         return R.string.localizable.error_message()
     }

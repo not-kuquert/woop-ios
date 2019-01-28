@@ -11,13 +11,12 @@ import MapKit
 import UIKit
 
 class EventDetailViewController: UIViewController {
-    var event: Event!
-
-    @IBOutlet var mapView: MKMapView!
-    @IBOutlet var addressLabel: UILabel!
-    @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var eventView: EventView!
+    @IBOutlet var addressLabel: UILabel!
     @IBOutlet var checkinButton: UIButton!
+    @IBOutlet var descriptionLabel: UILabel!
+
+    private var event: Event!
 
     class func newInstance(event: Event) -> EventDetailViewController {
         let controller = R.storyboard.main.eventDetailViewController()!
@@ -27,12 +26,14 @@ class EventDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureWith(event: event)
+        checkinButton.addTarget(self, action: #selector(showCheckinAlert), for: .touchUpInside)
+    }
+
+    private func configureWith(event: Event) {
         descriptionLabel.text = event.description
         eventView.event = event
         populatAddessLabel(event: event)
-
-        checkinButton.addTarget(self, action: #selector(showCheckinAlert), for: .touchUpInside)
-        checkinButton.layer.cornerRadius = 10
     }
 
     private func populatAddessLabel(event: Event) {
@@ -45,6 +46,21 @@ class EventDetailViewController: UIViewController {
 
             self?.addressLabel.text = R.string.localizable.address(address, neighborhood, city)
         }
+    }
+
+    private func handleCheckin(name: String, email: String) {
+        let checkin = Checkin(eventId: event.id, name: name, email: email)
+
+        EventsFacade.shared.checkIn(checkin: checkin, completion: { [weak self] _, error in
+            guard error == nil else {
+                self?.showInfoAlert(title: R.string.localizable.checkin_failure_title())
+                self?.checkinButton.isEnabled = true
+                return
+            }
+
+            self?.showInfoAlert(title: R.string.localizable.checkin_success_title())
+            self?.checkinButton.isEnabled = false
+        })
     }
 
     @objc private func showCheckinAlert() {
@@ -67,9 +83,11 @@ class EventDetailViewController: UIViewController {
         let alert = UIAlertController(title: title,
                                       message: nil,
                                       preferredStyle: .alert)
+
         alert.addAction(UIAlertAction(title: R.string.localizable.alert_default_button(),
                                       style: .default,
                                       handler: nil))
+
         present(alert, animated: true)
     }
 
@@ -88,31 +106,20 @@ class EventDetailViewController: UIViewController {
             textField.keyboardType = .emailAddress
         })
 
-        // TODO: Deal with possible memory leaks here due to selfs
-        alert.addAction(UIAlertAction(title: R.string.localizable.alert_checkin_button(), style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: R.string.localizable.alert_checkin_button(), style: .default, handler: { [weak self, weak alert] _ in
 
             func isValid(name: String, email: String) -> Bool {
                 return (email.count > 0 && email.contains("@") && name.count > 0)
             }
 
-            guard let name = alert.textFields?.get(at: 0)?.text,
-                let email = alert.textFields?.get(at: 1)?.text,
+            guard let name = alert?.textFields?.get(at: 0)?.text,
+                let email = alert?.textFields?.get(at: 1)?.text,
                 isValid(name: name, email: email) else {
-                self.showInvalidCheckinAlert()
+                self?.showInvalidCheckinAlert()
                 return
             }
 
-            EventsFacade.shared.checkIn(checkin: Checkin(eventId: self.event.id, name: name, email: email),
-                                 completion: { response, _ in
-                                     switch response?.code {
-                                     case .some("200"):
-                                         self.showInfoAlert(title: R.string.localizable.checkin_success_title())
-                                         self.checkinButton.isEnabled = false
-                                     default:
-                                         self.showInfoAlert(title: R.string.localizable.checkin_failure_title())
-                                         self.checkinButton.isEnabled = true
-                                     }
-            })
+            self?.handleCheckin(name: name, email: email)
         }))
     }
 }
